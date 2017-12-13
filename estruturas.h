@@ -1,5 +1,6 @@
 #ifndef ESTRUTURAS_H_INCLUDED
 #define ESTRUTURAS_H_INCLUDED
+#include "constantes.h"
 
 typedef struct {
     int ano, mes, dia;

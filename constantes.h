@@ -3,5 +3,11 @@
 
 #define MAX_STRING 50
 #define MAX_MATRICULA 8
+#define MAX_ANO 2017
+#define MIN_ANO 1983
+#define MIN_MES 1
+#define MAX_MES 12
+#define MAX_VEICULOS 10
+#define MAX_ENCOMENDAS 100
 
 #endif // CONSTANTES_H_INCLUDED

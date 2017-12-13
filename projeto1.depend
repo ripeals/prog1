@@ -31,3 +31,36 @@
 	"funcoes_auxiliares.h"
 	"constantes.h"
 
+1513201805 source:c:\users\sara\documents\github\prog1\encomendas.c
+	<stdio.h>
+	<stdlib.h>
+
+1513203849 source:c:\users\sara\documents\github\prog1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
+1513203007 c:\users\sara\documents\github\prog1\funcoes_auxiliares.h
+	"constantes.h"
+	"estruturas.h"
+
+1513203528 c:\users\sara\documents\github\prog1\constantes.h
+
+1513204338 source:c:\users\sara\documents\github\prog1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+	"veiculo.h"
+	"encomendas.h"
+
+1513207160 c:\users\sara\documents\github\prog1\veiculo.h
+	"estruturas.h"
+
+1513201805 c:\users\sara\documents\github\prog1\encomendas.h
+
+1513203583 c:\users\sara\documents\github\prog1\estruturas.h
+	"constantes.h"
+

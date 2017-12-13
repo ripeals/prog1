@@ -4,6 +4,7 @@
 #include "funcoes_auxiliares.h"
 #include "constantes.h"
 
+
 // Acrescentada variavel controlo para repetir insercao se ao for inserido numero int
 int lerInteiro(char mensagem[MAX_STRING], int minimo, int maximo)
 {
@@ -95,4 +96,36 @@ void limpaBuffer(void)
         chr = getchar();
     }
     while (chr != '\n' && chr != EOF);
+}
+tipoData lerData()
+{
+    tipoData data;
+    int maximoDias;
+    data.ano = lerInteiro("\tAno: ", MIN_ANO, MAX_ANO);
+    data.mes = lerInteiro("\n\tMes: ", MIN_MES, MAX_MES);
+    switch(data.mes)
+    {
+    case 2:
+        if (data.ano%4==0 && data.ano%400==0)
+        {
+            maximoDias=29;
+        }
+        else
+        {
+            maximoDias=28;
+        }
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        maximoDias=30;
+        break;
+    default:
+        maximoDias=31;
+        break;
+    }
+    data.dia = lerInteiro("\n\tDia: ", 1, maximoDias);
+
+    return data;
 }

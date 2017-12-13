@@ -1,8 +1,15 @@
 #include <stdio.h>
 #include "veiculo.h"
+#include "estruturas.h"
+#include "constantes.h"
 
 void menuVeiculo(){
-    int opcao=0;
+    int numVeiculos,opcao=0;
+    tipoVeiculos veiculos[MAX_VEICULOS];
+
+    numVeiculos=0;
+    opcao=0;
+
     printf("\t\tMenu dos Veiculos");
     printf("\n\t1 - Inserir Veiculo");
     printf("\n\t2 - Consultar Veciulo");
@@ -11,7 +18,8 @@ void menuVeiculo(){
 
     switch(opcao){
         case 1:
-            inserirVeiculo();
+            veiculos[numVeiculos] = inserirVeiculo();
+            numVeiculos++;
             break;
         case 2:
             //consultarVeiculo();
@@ -22,8 +30,8 @@ void menuVeiculo(){
         default:
             printf("Introduza uma opcao valida");
             break;
-    }*/
+    }
 }
-void inserirVeiculo(){
-    tipo
+tipoVeiculos inserirVeiculo(){
+    lerData();
 }

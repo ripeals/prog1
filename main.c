@@ -24,5 +24,5 @@ int main()
                 break;
         }
     }while(opcao!=3);
-
+    return 0;
 }
