@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1513182806 source:c:\users\rita\desktop\projeto1\encomendas.c
+	<stdio.h>
+	<stdlib.h>
+
+1513183326 source:c:\users\rita\desktop\projeto1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+	"veiculo.h"
+	"encomendas.h"
+
+1513181975 c:\users\rita\desktop\projeto1\funcoes_auxiliares.h
+	"constantes.h"
+
+1513182363 c:\users\rita\desktop\projeto1\constantes.h
+
+1513181924 c:\users\rita\desktop\projeto1\veiculo.h
+
+1513183489 c:\users\rita\desktop\projeto1\encomendas.h
+
+1513181924 source:c:\users\rita\desktop\projeto1\veiculo.c
+	<stdio.h>
+	"veiculo.h"
+
+1513184237 source:c:\users\rita\desktop\projeto1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
