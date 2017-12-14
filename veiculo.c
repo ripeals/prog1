@@ -36,7 +36,7 @@ void menuVeiculo(){
 tipoVeiculos inserirVeiculo(){
     int tamanho,i;
     //veiculo.dataFrabrico=lerData();
-    //tipoVeiculos veiculo;
+    tipoVeiculos veiculo;
     //lerString("\n\tMatricula: ",veiculo.matricula,8);
     //toupper(veiculo.matricula);
 
