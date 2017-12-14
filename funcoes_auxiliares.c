@@ -129,3 +129,26 @@ tipoData lerData()
 
     return data;
 }
+void lerMatricula(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int maximoCaracteres)
+{
+    int tamanhoString;
+
+    do 			// Repete leitura caso sejam obtidas strings vazias
+    {
+        //   puts(mensagem);
+        printf("%s", mensagem);
+        fgets(vetorCaracteres, maximoCaracteres, stdin);
+
+        tamanhoString = strlen(vetorCaracteres);
+        if(vetorCaracteres[tamanhoString-1] != '\n')  // ficaram caracteres no buffer....
+        {
+            limpaBuffer();  // apenas faz sentido limpar buffer se a ficarem caracteres
+        }
+        if (tamanhoString == 1)
+        {
+            printf("Nao foram introduzidos caracteres!\n\n");
+        }
+
+    }
+    while (tamanhoString == 1);
+}

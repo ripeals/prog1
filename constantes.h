@@ -9,5 +9,7 @@
 #define MAX_MES 12
 #define MAX_VEICULOS 10
 #define MAX_ENCOMENDAS 100
+#define MAX_CARGA 1000
+#define MIN_CARGA 1
 
 #endif // CONSTANTES_H_INCLUDED

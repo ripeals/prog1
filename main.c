@@ -13,6 +13,7 @@ int main()
         printf("\n\t1 - Veiculos");
         printf("\n\t2 - Encomendas");
         printf("\n\t3 - Sair");
+        printf("\n\tOpcao: ");
         scanf("%d",&opcao);
         //limpaBuffer();
         switch(opcao){

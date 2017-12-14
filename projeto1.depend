@@ -35,7 +35,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1513203849 source:c:\users\sara\documents\github\prog1\funcoes_auxiliares.c
+1513209731 source:c:\users\sara\documents\github\prog1\funcoes_auxiliares.c
 	<stdio.h>
 	<ctype.h>
 	<string.h>
@@ -46,9 +46,9 @@
 	"constantes.h"
 	"estruturas.h"
 
-1513203528 c:\users\sara\documents\github\prog1\constantes.h
+1513208976 c:\users\sara\documents\github\prog1\constantes.h
 
-1513204338 source:c:\users\sara\documents\github\prog1\main.c
+1513208976 source:c:\users\sara\documents\github\prog1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"

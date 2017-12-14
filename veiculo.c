@@ -13,7 +13,8 @@ void menuVeiculo(){
     printf("\t\tMenu dos Veiculos");
     printf("\n\t1 - Inserir Veiculo");
     printf("\n\t2 - Consultar Veciulo");
-    printf("\n\t3 - Listar Veiculo\n");
+    printf("\n\t3 - Listar Veiculo");
+    printf("\n\tOpcao: ");
     scanf("%d",&opcao);
 
     switch(opcao){
@@ -33,5 +34,12 @@ void menuVeiculo(){
     }
 }
 tipoVeiculos inserirVeiculo(){
-    lerData();
+    int tamanho,i;
+    //veiculo.dataFrabrico=lerData();
+    //tipoVeiculos veiculo;
+    //lerString("\n\tMatricula: ",veiculo.matricula,8);
+    //toupper(veiculo.matricula);
+
+    veiculo.cargaMaxima = lerInteiro("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
+    veiculo.estado=1;
 }
