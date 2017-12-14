@@ -7,9 +7,10 @@
 
 int main()
 {
+
     int opcao=0;
     do{
-        printf("\t\tDistribuição de Encomendas");
+        printf("\t\t\t  Distribuicao de Encomendas");
         printf("\n\t1 - Veiculos");
         printf("\n\t2 - Encomendas");
         printf("\n\t3 - Sair");

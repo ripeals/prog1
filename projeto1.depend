@@ -64,3 +64,47 @@
 1513203583 c:\users\sara\documents\github\prog1\estruturas.h
 	"constantes.h"
 
+1513282416 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"estruturas.h"
+	"constantes.h"
+	"encomendas.h"
+
+1513282376 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
+1513279901 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
+	"constantes.h"
+	"estruturas.h"
+
+1513280469 c:\users\rita\desktop\aserio\prog1\constantes.h
+
+1513270921 c:\users\rita\desktop\aserio\prog1\estruturas.h
+	"constantes.h"
+
+1513281767 source:c:\users\rita\desktop\aserio\prog1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+	"veiculo.h"
+	"encomendas.h"
+
+1513279901 c:\users\rita\desktop\aserio\prog1\veiculo.h
+	"estruturas.h"
+
+1513281220 c:\users\rita\desktop\aserio\prog1\encomendas.h
+
+1513281879 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
+	<stdio.h>
+	"veiculo.h"
+	"estruturas.h"
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
