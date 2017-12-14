@@ -2,6 +2,7 @@
 #include "veiculo.h"
 #include "estruturas.h"
 #include "constantes.h"
+#include "funcoes_auxiliares.h"
 
 void menuVeiculo(){
     int numVeiculos,opcao=0;
@@ -19,7 +20,7 @@ void menuVeiculo(){
 
     switch(opcao){
         case 1:
-            veiculos[numVeiculos] = inserirVeiculo();
+            inserirVeiculo(veiculos,&numVeiculos);
             numVeiculos++;
             break;
         case 2:
@@ -33,13 +34,11 @@ void menuVeiculo(){
             break;
     }
 }
-tipoVeiculos inserirVeiculo(){
-    int tamanho,i;
-    //veiculo.dataFrabrico=lerData();
-    //tipoVeiculos veiculo;
+void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
+    veiculos[*numVeiculos].dataFabrico=lerData();
     //lerString("\n\tMatricula: ",veiculo.matricula,8);
     //toupper(veiculo.matricula);
 
-    veiculo.cargaMaxima = lerInteiro("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
-    veiculo.estado=1;
+    veiculos[*numVeiculos].cargaMaxima = lerInteiro("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
+    veiculos[*numVeiculos].estado=1;
 }

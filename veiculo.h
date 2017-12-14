@@ -3,6 +3,6 @@
 #include "estruturas.h"
 
 void menuVeiculo();
-tipoVeiculos inserirVeiculo();
+void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
 
 #endif // VEICULO_H_INCLUDED
