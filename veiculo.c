@@ -8,8 +8,6 @@ void menuVeiculo(){
     int numVeiculos,opcao=0;
     tipoVeiculos veiculos[MAX_VEICULOS];
     //char matricula[MAX_MATRICULA];
-
-
     numVeiculos=0;
     opcao=0;
 
@@ -26,39 +24,30 @@ void menuVeiculo(){
             numVeiculos++;
             break;
         case 2:
-            //consultarVeiculo();
+            //consultarVeiculo(veiculos,&numVeiculos);
             break;
         case 3:
-            //listarVeiculo();
+            listarVeiculos(veiculos,&numVeiculos);
             break;
         default:
             printf("Introduza uma opcao valida");
             break;
     }
 }
-<<<<<<< HEAD
-tipoVeiculos inserirVeiculo(){
-    int tamanho,i;
-    //veiculo.dataFrabrico=lerData();
-    tipoVeiculos veiculo;
-    //lerString("\n\tMatricula: ",veiculo.matricula,8);
-    //toupper(veiculo.matricula);
-
-    veiculo.cargaMaxima = lerInteiro("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
-    veiculo.estado=1;
-=======
-
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos/*, char matricula[MAX_MATRICULA]*/){
 
     printf("\n\tData de Fabrico: ");
     veiculos[*numVeiculos].dataFabrico=lerData();
     //lerString("\nMatricula: ", matricula, MAX_MATRICULA);
-
-
-
-
-    veiculos[*numVeiculos].cargaMaxima = lerInteiro("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
+    veiculos[*numVeiculos].cargaMaxima = lerFloat("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
     veiculos[*numVeiculos].estado=1;
->>>>>>> d2dedc5fc11337dacf6af15c23e94fd18b179c40
+}
+void listarVeiculos(tipoVeiculos veiculos[],int *numVeiculos){
+    int i;
+    for(i=0;i<numVeiculos;i++){
+        printf("\nData de Fabrico: %d/%d/%d",veiculos[*numVeiculos].dataFabrico);
+        printf("\nCarga maxima: %.2f",veiculos[*numVeiculos].cargaMaxima);
+
+    }
 }

@@ -16,7 +16,7 @@ int main()
         printf("\n\t3 - Sair");
         printf("\n\tOpcao: ");
         scanf("%d",&opcao);
-        //limpaBuffer();
+        limpaBuffer();
         switch(opcao){
             case 1:
                 menuVeiculo();
