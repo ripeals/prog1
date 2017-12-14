@@ -8,6 +8,6 @@ float lerFloat(char mensagem[MAX_STRING], float minimo, float maximo);
 void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int maximoCaracteres);
 void limpaBuffer(void);
 tipoData lerData();
-
+//void inserirMatricula(char matricula[MAX_MATRICULA]);
 
 #endif // FUNCOES_AUXILIARES_H_INCLUDED

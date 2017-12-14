@@ -11,13 +11,13 @@ int lerInteiro(char mensagem[MAX_STRING], int minimo, int maximo)
     int numero, controlo;
     do
     {
-        printf("%s (%d a %d) :", mensagem, minimo, maximo);
+        printf("%s (%d a %d): ", mensagem, minimo, maximo);
         controlo = scanf ("%d", &numero);  // scanf devolve quantidade de valores vàlidos obtidos
         limpaBuffer();     //limpa todos os caracteres do buffer stdin (nomeadamente o \n)
 
         if (controlo == 0)
         {
-            printf("Devera inserir um numero inteiro \n");
+            printf("Devera inserir um numero inteiro. \n");
         }
         else
         {
@@ -40,13 +40,13 @@ float lerFloat(char mensagem[MAX_STRING], float minimo, float maximo)
     int controlo;
     do
     {
-        printf("%s (%.2f a %.2f) :", mensagem, minimo, maximo);
+        printf("%s (%.2f a %.2f): ", mensagem, minimo, maximo);
         controlo = scanf ("%f", &numero);  // scanf devolve quantidade de valores vàlidos obtidos
         limpaBuffer();
 
         if (controlo == 0)
         {
-            printf("Devera inserir um numero decimal (float) \n");
+            printf("Devera inserir um numero decimal (float). \n");
         }
         else
         {
@@ -81,7 +81,7 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
         }
         if (tamanhoString == 1)
         {
-            printf("Nao foram introduzidos caracteres!!! . apenas carregou no ENTER \n\n");
+            printf("Nao foram introduzidos caracteres!!! Apenas carregou no ENTER \n\n");
         }
 
     }
@@ -101,8 +101,8 @@ tipoData lerData()
 {
     tipoData data;
     int maximoDias;
-    data.ano = lerInteiro("\tAno: ", MIN_ANO, MAX_ANO);
-    data.mes = lerInteiro("\n\tMes: ", MIN_MES, MAX_MES);
+    data.ano = lerInteiro("\n\t Ano ", MIN_ANO, MAX_ANO);
+    data.mes = lerInteiro("\t Mes ", MIN_MES, MAX_MES);
     switch(data.mes)
     {
     case 2:
@@ -125,7 +125,7 @@ tipoData lerData()
         maximoDias=31;
         break;
     }
-    data.dia = lerInteiro("\n\tDia: ", 1, maximoDias);
+    data.dia = lerInteiro("\t Dia ", 1, maximoDias);
 
     return data;
 }
@@ -152,3 +152,10 @@ void lerMatricula(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], i
     }
     while (tamanhoString == 1);
 }
+
+/*void inserirMatricula(char matricula[MAX_MATRICULA]){
+     lerString("\nMatricula: ", matricula[MAX_MATRICULA], MAX_MATRICULA);
+
+
+
+}*/
