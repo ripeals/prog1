@@ -39,13 +39,12 @@ void menuEncomendas()
 
 
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas){
-   // char destino[MAX_STRING];
 
     encomendas[*numEncomendas].numRegisto = lerInteiro("\n\tNumero de Registo ",1,MAX_NUM_ENCOMENDA);
     printf("\tData de Registo: ");
     encomendas[*numEncomendas].dataRegisto = lerData();
     encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);
-    //encomendas[*numEncomendas].destino = lerString("\nDestino: ",
+    lerString("\nDestino: ", encomendas[*numEncomendas].destino, MAX_STRING);
     encomendas[*numEncomendas].estado=1;
     //encomendas[*numEncomendas].obs = lerString("\nObservacoes: ",encomendas[*numEncomendas].obs, MAX_STRING );
 

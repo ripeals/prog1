@@ -46,8 +46,8 @@ void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos/*, char matricula[M
 void listarVeiculos(tipoVeiculos veiculos[],int *numVeiculos){
     int i;
     for(i=0;i<numVeiculos;i++){
-        printf("\nData de Fabrico: %d/%d/%d",veiculos[*numVeiculos].dataFabrico);
-        printf("\nCarga maxima: %.2f",veiculos[*numVeiculos].cargaMaxima);
+        printf("\nData de Fabrico: %d/%d/%d",veiculos[*numVeiculos].dataFabrico.dia, veiculos[*numVeiculos].dataFabrico.mes, veiculos[*numVeiculos].dataFabrico.dia);
+        printf("\nCarga maxima: %.2f\n",veiculos[*numVeiculos].cargaMaxima);
 
     }
 }
