@@ -67,38 +67,26 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
 {
     int tamanhoString;
 
-    do 			// Repete leitura caso sejam obtidas strings vazias
+    do 	// Repete leitura caso sejam obtidas strings vazias
     {
         //   puts(mensagem);
         printf("%s", mensagem);
         fgets(vetorCaracteres, maximoCaracteres, stdin);
+
         tamanhoString = strlen(vetorCaracteres);
-       /*if(vetorCaracteres[tamanhoString>MAX_STRING])
-            {
-                do{
-
-                printf("\nIntroduziu caracteres a mais. Por favor insira de novo (%d a %d): \n",1,MAX_STRING);
-                printf("%s", mensagem);
-                fgets(vetorCaracteres, maximoCaracteres, stdin);
-                }while(tamanhoString>MAX_STRING);
-
-            }*/
-             //voltar a testar(o está a entrar sempre no if)
-        if(vetorCaracteres[tamanhoString-1] != '\n')  // ficaram caracteres no buffer....
-        {
-            limpaBuffer();  // apenas faz sentido limpar buffer se a ficarem caracteres
+        if(tamanhoString <= 1){
+            printf("\n\tERRO: Tem de inserir um valor!");
         }
-        else
-        {
-            vetorCaracteres[tamanhoString-1]='\0';
+        else{
+            if(vetorCaracteres[tamanhoString-1] == '\n'){
+                vetorCaracteres[tamanhoString] = '\0';
+            }
+            else{
+                limpaBuffer();
+            }
         }
-        if (tamanhoString == 1)
-        {
-            printf("Nao foram introduzidos caracteres!!! Apenas carregou no ENTER \n\n");
-        }
+    }while(tamanhoString <= 1);
 
-    }
-    while (tamanhoString == 1);
 }
 
 void limpaBuffer(void)
