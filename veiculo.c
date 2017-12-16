@@ -22,12 +22,15 @@ void menuVeiculo(){
 
         switch(opcao){
             case 1:
+                printf("\n\t\t\tInserir Encomendas");
                 inserirVeiculo(veiculos,&numVeiculos);
                 break;
             case 2:
+                printf("\n\t\t\tConsultar Encomendas");
                 //consultarVeiculo(veiculos,&numVeiculos);
                 break;
             case 3:
+                printf("\n\t\t\tListar Encomendas");
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:

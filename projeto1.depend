@@ -136,7 +136,7 @@
 1513299382 c:\users\sarita\documents\github\prog1\estruturas.h
 	"constantes.h"
 
-1513419889 c:\users\sarita\documents\github\prog1\encomendas.h
+1513425270 c:\users\sarita\documents\github\prog1\encomendas.h
 
 1513419889 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
 	<stdio.h>
@@ -156,7 +156,7 @@
 1513422303 c:\users\sarita\documents\github\prog1\veiculo.h
 	"estruturas.h"
 
-1513419889 source:c:\users\sarita\documents\github\prog1\veiculo.c
+1513424376 source:c:\users\sarita\documents\github\prog1\veiculo.c
 	<stdio.h>
 	"veiculo.h"
 	"estruturas.h"
