@@ -43,11 +43,12 @@ void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos/*, char matricula[M
     veiculos[*numVeiculos].cargaMaxima = lerFloat("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
     veiculos[*numVeiculos].estado=1;
 }
-void listarVeiculos(tipoVeiculos veiculos[],int *numVeiculos){
-    int i;
-    for(i=0;i<numVeiculos;i++){
+
+void listarVeiculos(tipoVeiculos veiculos[], int *numVeiculos){
+    //int i;
+    //for(i=0;i<numVeiculos;i++){
         printf("\nData de Fabrico: %d/%d/%d",veiculos[*numVeiculos].dataFabrico.dia, veiculos[*numVeiculos].dataFabrico.mes, veiculos[*numVeiculos].dataFabrico.dia);
         printf("\nCarga maxima: %.2f\n",veiculos[*numVeiculos].cargaMaxima);
 
     }
-}
+//}

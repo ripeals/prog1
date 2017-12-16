@@ -44,7 +44,7 @@ void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas){
     printf("\tData de Registo: ");
     encomendas[*numEncomendas].dataRegisto = lerData();
     encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);
-    lerString("\nDestino: ", encomendas[*numEncomendas].destino, MAX_STRING);
+    lerString("\tDestino: ", encomendas[*numEncomendas].destino, MAX_STRING);
     encomendas[*numEncomendas].estado=1;
     //encomendas[*numEncomendas].obs = lerString("\nObservacoes: ",encomendas[*numEncomendas].obs, MAX_STRING );
 
