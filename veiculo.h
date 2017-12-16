@@ -3,6 +3,7 @@
 #include "estruturas.h"
 
 void menuVeiculo();
-void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos/*, char matricula[MAX_MATRICULA]*/);
-void listarVeiculos(tipoVeiculos veiculos[],int *numVeiculos);
+void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
+void listarVeiculos(tipoVeiculos veiculos[],int numVeiculos);
+void apresentaDadosVeiculos(tipoVeiculos veiculo);
 #endif // VEICULO_H_INCLUDED

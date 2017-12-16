@@ -119,3 +119,47 @@
 	"constantes.h"
 	"funcoes_auxiliares.h"
 
+1513419889 source:c:\users\sarita\documents\github\prog1\encomendas.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"estruturas.h"
+	"constantes.h"
+	"encomendas.h"
+
+1513299382 c:\users\sarita\documents\github\prog1\funcoes_auxiliares.h
+	"constantes.h"
+	"estruturas.h"
+
+1513299382 c:\users\sarita\documents\github\prog1\constantes.h
+
+1513299382 c:\users\sarita\documents\github\prog1\estruturas.h
+	"constantes.h"
+
+1513419889 c:\users\sarita\documents\github\prog1\encomendas.h
+
+1513419889 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
+1513299382 source:c:\users\sarita\documents\github\prog1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+	"veiculo.h"
+	"encomendas.h"
+
+1513422303 c:\users\sarita\documents\github\prog1\veiculo.h
+	"estruturas.h"
+
+1513419889 source:c:\users\sarita\documents\github\prog1\veiculo.c
+	<stdio.h>
+	"veiculo.h"
+	"estruturas.h"
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
