@@ -4,39 +4,18 @@
 #include "constantes.h"
 #include "funcoes_auxiliares.h"
 
-void menuVeiculo(){
-    int numVeiculos,opcao;
-    tipoVeiculos veiculos[MAX_VEICULOS];
-    //char matricula[MAX_MATRICULA];
-    numVeiculos=0;
-    opcao=0;
-    do{
-        printf("\t\t\t\tMenu dos Veiculos");
-        printf("\n\t1 - Inserir Veiculo");
-        printf("\n\t2 - Consultar Veciulo");
-        printf("\n\t3 - Listar Veiculo");
-        printf("\n\t4 - Sair");
-        printf("\n\tOpcao: ");
-        scanf("%d",&opcao);
-        limpaBuffer();
 
-        switch(opcao){
-            case 1:
-                printf("\n\t\t\tInserir Encomendas");
-                inserirVeiculo(veiculos,&numVeiculos);
-                break;
-            case 2:
-                printf("\n\t\t\tConsultar Encomendas");
-                //consultarVeiculo(veiculos,&numVeiculos);
-                break;
-            case 3:
-                printf("\n\t\t\tListar Encomendas");
-                listarVeiculos(veiculos, numVeiculos);
-                break;
-            case 4:
-                break;
+void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){//nao esta a funcionar
+    int posicao, i;
+    posicao=-1;
+
+    for(i=0;i<numVeiculos;i++){
+        if(veiculos[i].matricula == matricula){
+            posicao =i;
+            i = numVeiculos;
         }
-    }while(opcao!=4);
+    }
+    return posicao;
 }
 
 void inserirVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int *numVeiculos){
@@ -68,3 +47,21 @@ void apresentaDadosVeiculos(tipoVeiculos veiculo){
     printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
     printf("\n\tCarga maxima: %.2f\n",veiculo.cargaMaxima);
 }
+void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
+    int posicao;
+    if(numVeiculos == 0){
+        printf("\n\tATENCAO: nao existem veiculos inseridos");
+    }
+    else{
+        posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
+
+        if(posicao == -1){//nao existe no vetor
+            printf("O veiculos com a %s matricula nao existe.",matricula);
+        }
+        else{
+            apresentaDadosVeiculos(veiculos[posicao],0);
+        }
+    }
+
+}
+int quantidadeVeiculos(numVeiculos)

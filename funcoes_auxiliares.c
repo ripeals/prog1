@@ -130,33 +130,43 @@ tipoData lerData()
 
     return data;
 }
-void lerMatricula(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int maximoCaracteres)
+/*void lerMatricula(char matricula[MAX_STRING],tipoVeiculos veiculos[MAX_VEICULOS])
 {
-    int tamanhoString;
+    tipo
+    char letras="ABCDEFGHIJKLMNOPQRSTUVXWYZ"
 
-    do 			// Repete leitura caso sejam obtidas strings vazias
+    int tamanhoString,i;
+    int contador = 0;
+
+    do
     {
-        //   puts(mensagem);
-        printf("%s", mensagem);
-        fgets(vetorCaracteres, maximoCaracteres, stdin);
+        lerString("\n\tInsira a matricula: ",matricula, MAX_MATRICULA);
+        tamanhoString = strlen(matricula);
 
-        tamanhoString = strlen(vetorCaracteres);
-        if(vetorCaracteres[tamanhoString-1] != '\n')  // ficaram caracteres no buffer....
-        {
-            limpaBuffer();  // apenas faz sentido limpar buffer se a ficarem caracteres
+
+        if(tamanhoString != MAX_MATRICULA){
+            printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
         }
-        if (tamanhoString == 1)
-        {
-            printf("Nao foram introduzidos caracteres!\n\n");
-        }
+        else{
+            if(matricula[2] != '-' || matricula[5] != '-'){
+                 printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
+            }else{
+                for(i=0;i<MAX_MATRICULA;i++){
+                    matricula[i]=toupper(matricula[i]);
+                    if(matricula[i]==char){
+                            letras=matricula[i];
+                        }
+                        else{
+                            numeros=matriculas[i];
+                        }
+                    if(veiculos.dataFabrico.ano>=1937 || veiculos.dataFabrico.ano <1992){
+                        printf("%s-%d%d-%d%d",letras,numeros);
+                    }else if(veiculos.dataFabrico.ano>=1992 || veiculos.dataFabrico.ano <=1997)
+                }
+            }
+
 
     }
     while (tamanhoString == 1);
-}
-
-/*void inserirMatricula(char matricula[MAX_MATRICULA]){
-     lerString("\nMatricula: ", matricula[MAX_MATRICULA], MAX_MATRICULA);
-
-
-
 }*/
+
