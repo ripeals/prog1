@@ -73,7 +73,7 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
         printf("%s", mensagem);
         fgets(vetorCaracteres, maximoCaracteres, stdin);
         tamanhoString = strlen(vetorCaracteres);
-            if(vetorCaracteres[tamanhoString>MAX_STRING])
+       /*if(vetorCaracteres[tamanhoString>MAX_STRING])
             {
                 do{
 
@@ -82,7 +82,8 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
                 fgets(vetorCaracteres, maximoCaracteres, stdin);
                 }while(tamanhoString>MAX_STRING);
 
-            }
+            }*/
+             //voltar a testar(o está a entrar sempre no if)
         if(vetorCaracteres[tamanhoString-1] != '\n')  // ficaram caracteres no buffer....
         {
             limpaBuffer();  // apenas faz sentido limpar buffer se a ficarem caracteres

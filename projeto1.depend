@@ -76,7 +76,7 @@
 	"constantes.h"
 	"encomendas.h"
 
-1513415360 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
+1513416552 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
 	<stdio.h>
 	<ctype.h>
 	<string.h>
@@ -103,9 +103,9 @@
 1513352259 c:\users\rita\desktop\aserio\prog1\veiculo.h
 	"estruturas.h"
 
-1513281220 c:\users\rita\desktop\aserio\prog1\encomendas.h
+1513416974 c:\users\rita\desktop\aserio\prog1\encomendas.h
 
-1513414222 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
+1513417246 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>
 	"veiculo.h"
 	"estruturas.h"
