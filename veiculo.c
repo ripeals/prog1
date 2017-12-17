@@ -64,7 +64,7 @@ void apresentaDadosVeiculos(tipoVeiculos veiculo){
     }
 
 }*/
-float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
+/*float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
     int i;
     float carga,cargaMedia;
     carga=0;
@@ -84,5 +84,5 @@ float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
         cargaMedia=carga/numVeiculos;
         printf("\n\t\t\tA carga media dos veiculos em viagem e de %.2f",cargaMedia);
     }
-}
+}*/
 

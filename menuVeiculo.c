@@ -33,6 +33,9 @@ void menuVeiculo(){
                 break;
             case 4:
                 break;
+            default:
+                printf("\tIntroduza uma opcao valida\n\n");
+                break;
         }
     }while(opcao!=4);
 
@@ -58,7 +61,7 @@ void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
                 break;
             case 3:
                 printf("\n\t\t\tCarga media dos veiculos em viagem");
-                cargaMedia=cargaMediaVeiculos(veiculos,numVeiculos);
+               // cargaMedia=cargaMediaVeiculos(veiculos,numVeiculos);
                 break;
             case 4:
                 break;

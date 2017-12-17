@@ -26,6 +26,7 @@ void menuEncomendas()
             break;
         case 2:
             printf("\n\t\t\tConsultar Encomendas");
+            consultarEncomendas(encomendas, &numEncomendas, numRegisto);
             break;
         case 3:
             printf("\n\t\t\tListar Encomendas");
@@ -74,4 +75,36 @@ void apresentaDadosEncomendas(tipoEncomendas encomenda){
     printf("\n\tObservacoes: %s",encomenda.obs);
 }
 
-//}
+
+
+
+int procuraEncomendas (tipoEncomendas encomendas [MAX_ENCOMENDAS], int *numEncomendas){
+    int posicao, i;
+    int numeroRegisto;
+    posicao = -1;
+    for(i=0; i<*numEncomendas;i++){
+        if(encomendas[i].numRegisto == numeroRegisto){
+        posicao = i;
+        i=*numEncomendas;
+        }
+    }
+    return posicao;
+}
+
+void consultarEncomendas (tipoEncomendas encomendas [], int *numEncomendas, int numeroRegisto){
+    int posicao;
+    if(*numEncomendas == 0){
+        printf("\n\tATENCAO: nao existem encomendas inseridas!!! Por favor, insira.");
+        inserirEncomendas(encomendas, numEncomendas);
+    }
+    else{
+        posicao = procuraEncomendas(encomendas, numEncomendas, numeroRegisto);
+
+        if(posicao == -1){//nao existe no vetor
+            printf("A encomenda com o numero de registo %d nao e valida ",numeroRegisto);
+        }
+        else{
+            apresentaDadosEncomendas(encomendas[posicao]);
+        }
+    }
+}

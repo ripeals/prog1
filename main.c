@@ -5,6 +5,7 @@
 #include "veiculo.h"
 #include "encomendas.h"
 
+
 int main()
 {
 
@@ -23,6 +24,9 @@ int main()
                 break;
             case 2:
                 menuEncomendas();
+                break;
+            default:
+                printf("Introduza uma opcao valida.");
                 break;
         }
     }while(opcao!=3);
