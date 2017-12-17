@@ -5,7 +5,7 @@
 #include "funcoes_auxiliares.h"
 
 
-void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){//nao esta a funcionar
+/*void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){//nao esta a funcionar
     int posicao, i;
     posicao=-1;
 
@@ -16,7 +16,7 @@ void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){//nao e
         }
     }
     return posicao;
-}
+}*/
 
 void inserirVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int *numVeiculos){
     if(*numVeiculos == MAX_VEICULOS){
@@ -47,7 +47,7 @@ void apresentaDadosVeiculos(tipoVeiculos veiculo){
     printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
     printf("\n\tCarga maxima: %.2f\n",veiculo.cargaMaxima);
 }
-void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
+/*void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
     int posicao;
     if(numVeiculos == 0){
         printf("\n\tATENCAO: nao existem veiculos inseridos");
@@ -63,5 +63,26 @@ void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao fun
         }
     }
 
+}*/
+float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
+    int i;
+    float carga,cargaMedia;
+    carga=0;
+    cargaMedia=0;
+    if(numVeiculos == 0){
+        printf("\n\tNao existem veiculos");
+    }
+    else{
+        for (i=0;i<numVeiculos;i++){
+            if(veiculos[i].estado==A_TRANSPORTAR){
+                carga+=veiculos[i].cargaMaxima;
+            }
+            else{
+                printf("\n\t\t\tNao e possivel mostrar a carga media dos veiculos em viagem, porque de momento nao existe nenhum veiculo em viagem.");
+            }
+        }
+        cargaMedia=carga/numVeiculos;
+        printf("\n\t\t\tA carga media dos veiculos em viagem e de %.2f",cargaMedia);
+    }
 }
-int quantidadeVeiculos(numVeiculos)
+

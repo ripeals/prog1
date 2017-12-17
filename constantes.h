@@ -15,6 +15,11 @@
 #define MAX_PESO 50
 
 
-
+//Estado do Veiculo
+#define DISPONIVEL 1
+#define EM_CARGA 2
+#define A_TRANSPORTAR 3
+#define DE_REGRESSO 4
+#define AVARIADO 5
 
 #endif // CONSTANTES_H_INCLUDED

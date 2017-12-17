@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include "estruturas.h"
+#include "veiculo.h"
+#include "funcoes_auxiliares.h"
+
 void menuVeiculo(){
     int numVeiculos,opcao;
     tipoVeiculos veiculos[MAX_VEICULOS];
@@ -27,20 +32,21 @@ void menuVeiculo(){
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:
-                printf()
-            case 4:
                 break;
         }
     }while(opcao!=4);
+
 }
 void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
     int opcao=0;
+    float cargaMedia=0;
     printf("\n\t\t\t1 - Consultar Veiculos");
     printf("\n\t\t\t2 - Consultar quantidade de veiculos");
     printf("\n\t\t\t3 - Carga media dos veiculos em viagem");
-    printf("\n\t\t\t4 - Matricula dos veiculos com menos viagens");
+    printf("\n\t\t\t4 - Matricula dos veiculos com menos viagens ");
     scanf("%d",&opcao);
-    switch(opcao){
+    limpaBuffer();
+
         switch(opcao){
             case 1:
                 printf("\n\t\t\tConsultar Veiculos");
@@ -48,16 +54,13 @@ void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
                 break;
             case 2:
                 printf("\n\t\t\tConsultar quantidade de veiculos");
-                printf("A quantidade de veiculos n")
+                printf("\n\t\t\tA quantidade de veiculos existentes no momento e de %d",numVeiculos);
                 break;
             case 3:
-                printf("\n\t\t\tListar Veiculos");
-                listarVeiculos(veiculos, numVeiculos);
+                printf("\n\t\t\tCarga media dos veiculos em viagem");
+                cargaMedia=cargaMediaVeiculos(veiculos,numVeiculos);
                 break;
-            case 4:
-                printf()
             case 4:
                 break;
         }
-    }
 }
