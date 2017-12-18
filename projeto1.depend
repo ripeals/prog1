@@ -68,7 +68,7 @@
 1513203583 c:\users\sara\documents\github\prog1\estruturas.h
 	"constantes.h"
 
-1513543541 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
+1513556469 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
@@ -83,7 +83,7 @@
 	"funcoes_auxiliares.h"
 	"constantes.h"
 
-1513532700 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
+1513556559 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
 	"constantes.h"
 	"estruturas.h"
 
@@ -103,7 +103,7 @@
 1513532704 c:\users\rita\desktop\aserio\prog1\veiculo.h
 	"estruturas.h"
 
-1513543397 c:\users\rita\desktop\aserio\prog1\encomendas.h
+1513554077 c:\users\rita\desktop\aserio\prog1\encomendas.h
 
 1513536933 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>

@@ -95,37 +95,36 @@ void apresentaDadosEncomendas(tipoEncomendas encomenda)
 
 
 
-int procuraEncomendas (tipoEncomendas encomendas [MAX_ENCOMENDAS], int *numEncomendas, int numRegisto)
+int procuraEncomendas (tipoEncomendas encomendas [MAX_ENCOMENDAS], int numEncomendas, int numRegisto)
 {
     int posicao, i;
-    int numeroRegisto;
     posicao = -1;
-    for(i=0; i<*numEncomendas; i++)
+    for(i=0; i<numEncomendas; i++)
     {
-        if(encomendas[i].numRegisto == numeroRegisto)
+        if(encomendas[i].numRegisto == numRegisto)
         {
             posicao = i;
-            i=*numEncomendas;
+            i=numEncomendas;
         }
     }
     return posicao;
 }
 
-void consultarEncomendas (tipoEncomendas encomendas [], int *numEncomendas, int numeroRegisto)
+void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
 {
     int posicao;
-    if(*numEncomendas == 0)
+    if(numEncomendas == 0)
     {
         printf("\n\tATENCAO: nao existem encomendas inseridas!!! Por favor, insira.");
-        inserirEncomendas(encomendas, numEncomendas);
+        inserirEncomendas(encomendas, &numEncomendas);
     }
     else
     {
-        posicao = procuraEncomendas(encomendas, numEncomendas, numeroRegisto);
+        //posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
 
         if(posicao == -1) //nao existe no vetor
         {
-            printf("A encomenda com o numero de registo %d nao e valida ",numeroRegisto);
+            //printf("A encomenda com o numero de registo %d nao e valida ", numRegisto);
         }
         else
         {
@@ -134,7 +133,7 @@ void consultarEncomendas (tipoEncomendas encomendas [], int *numEncomendas, int 
     }
 }
 
-int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao esta a funcionar
+int eliminarEncomendas (tipoEncomendas encomendas[], int numEncomendas)  //nao esta a funcionar
 {
     int posicao, numRegisto, i;
     if(numEncomendas == 0)
