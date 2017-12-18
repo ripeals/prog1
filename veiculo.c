@@ -19,13 +19,14 @@
 }*/
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
+    char matricula[MAX_STRING];
     if(*numVeiculos == MAX_VEICULOS){
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
     }
     else{
         printf("\n\tData de Fabrico: ");
         veiculos[*numVeiculos].dataFabrico=lerData();
-        veiculos[*numVeiculos].matricula = lerMatricula()
+        veiculos[*numVeiculos].matricula = lerMatricula(matricula,tipoVeiculos veiculos));
         veiculos[*numVeiculos].cargaMaxima = lerFloat("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
         veiculos[*numVeiculos].estado=1;
         (*numVeiculos)++;

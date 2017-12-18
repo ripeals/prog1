@@ -134,7 +134,7 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     }
 }
 
-int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao esta a funcionar
+int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
 {
     int posicao, numRegisto, i;
     if(numEncomendas == 0)
@@ -143,7 +143,7 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao 
     }
     else
     {
-        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);//certo ate aqui
+        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
         posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
         if(posicao==-1)
         {
