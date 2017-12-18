@@ -4,6 +4,7 @@
 #include "constantes.h"
 #include "veiculo.h"
 #include "encomendas.h"
+#include "menuVeiculo.h"
 
 
 int main()

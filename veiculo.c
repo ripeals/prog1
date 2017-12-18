@@ -18,7 +18,7 @@
     return posicao;
 }*/
 
-void inserirVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int *numVeiculos){
+void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
     if(*numVeiculos == MAX_VEICULOS){
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
     }
