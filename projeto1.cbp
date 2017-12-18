@@ -44,10 +44,6 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menuVeiculo.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="menuVeiculo.h" />
 		<Unit filename="veiculo.c">
 			<Option compilerVar="CC" />
 		</Unit>
