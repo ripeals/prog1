@@ -21,6 +21,7 @@ typedef struct{
     tipoData dataFabrico;
     int estado;
     float cargaMaxima;
+    float cargaDisponivel;
 }tipoVeiculos;
 
 #endif // ESTRUTURAS_H_INCLUDED

@@ -4,6 +4,7 @@
 #include "estruturas.h"
 #include "constantes.h"
 #include "encomendas.h"
+#include "veiculo.h"
 
 void menuEncomendas()
 {
@@ -17,6 +18,7 @@ void menuEncomendas()
         printf("\n\t2 - Consultar encomendas");
         printf("\n\t3 - Listar encomendas");
         printf("\n\t4 - Eliminar encomendas");
+        printf("\n\t5 - Carregamento de encomendas");
         printf("\n\t5 - Sair");
         printf("\n\tOpcao: ");
         scanf("%d", &opcao);
@@ -35,10 +37,12 @@ void menuEncomendas()
             listarEncomendas (encomendas, numEncomendas);
             break;
         case 4:
-            printf("\n\t\t\tEliminar Encomenda(s)");
+            printf("\n\t\t\tEliminar Encomenda");
             numEncomendas=eliminarEncomendas(encomendas, numEncomendas);
             break;
         case 5:
+            printf("\n\t\t\tCarregamento de Encomendas");
+            //carregamentoEncomendas();
             break;
         default:
             printf("Por favor, introduza uma opcao valida.");
@@ -92,9 +96,6 @@ void apresentaDadosEncomendas(tipoEncomendas encomenda)
     printf("\n\tObservacoes: %s",encomenda.obs);
 }
 
-
-
-
 int procuraEncomendas (tipoEncomendas encomendas [], int numEncomendas, int numRegisto)
 {
     int posicao, i;
@@ -115,7 +116,7 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     int posicao,numRegisto;
     if(numEncomendas == 0)
     {
-        printf("\n\tATENCAO: nao existem encomendas inseridas!!! Por favor, insira.");
+        printf("\n\t\tATENCAO: Nao existem encomendas. Por favor, insira.");
     }
     else
     {
@@ -124,7 +125,7 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
 
         if(posicao == NAO_EXISTE) //nao existe no vetor
         {
-            printf("A encomenda com o numero de registo %d nao e valida ",numRegisto);
+            printf("\n\t\tA encomenda com o numero de registo %d nao e valida ",numRegisto);
         }
         else
         {
@@ -138,19 +139,18 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao 
     int posicao, numRegisto, i;
     if(numEncomendas == 0)
     {
-        printf("\nERRO: Nao existem encomendas. Por favor insira ");
-        inserirEncomendas(encomendas, &numEncomendas);
+        printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
     }
     else
     {
-        numRegisto = lerInteiro("\nNumero de Registo: ",1, MAX_NUM_ENCOMENDA);//certo ate aqui
+        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);//certo ate aqui
         posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
         if(posicao==-1)
         {
             do
             {
-                printf("\nPor favor insira um numero de registo valido.");
-                numRegisto = lerInteiro("\nNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
+                printf("\n\t\tPor favor insira um numero de registo valido.");
+                numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
             }
             while (numRegisto>1 || numRegisto<MAX_NUM_ENCOMENDA);
         }
@@ -161,8 +161,26 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao 
                 encomendas[i]=encomendas[i+1]; //?
             }
             numEncomendas--;
+            printf("\n\t\tEncomenda eliminada");
         }
-        return numEncomendas;
-    }
 
+    }
+    return numEncomendas;
 }
+/*void carregamentoEncomendas(){
+    int numRegisto;
+    char destino[MAX_STRING];
+    if(numEncomendas == 0){
+        printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+    }
+    else{
+        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
+        posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
+        if(encomendas[posicao].estado == REGISTADA){
+            lerString("\n\t\tDestino: ",destino,MAX_STRING);
+            //matricula
+
+
+        }
+    }
+}*/

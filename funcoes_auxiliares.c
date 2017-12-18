@@ -130,43 +130,30 @@ tipoData lerData()
 
     return data;
 }
-/*void lerMatricula(char matricula[MAX_STRING],tipoVeiculos veiculos[MAX_VEICULOS])
+void lerMatricula(char matricula[MAX_STRING],tipoVeiculos veiculos[MAX_VEICULOS])
 {
-    tipo
-    char letras="ABCDEFGHIJKLMNOPQRSTUVXWYZ"
 
     int tamanhoString,i;
-    int contador = 0;
 
     do
     {
-        lerString("\n\tInsira a matricula: ",matricula, MAX_MATRICULA);
+        lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
         tamanhoString = strlen(matricula);
 
 
-        if(tamanhoString != MAX_MATRICULA){
-            printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
-        }
-        else{
-            if(matricula[2] != '-' || matricula[5] != '-'){
+        if(tamanhoString == MAX_MATRICULA){
+           if(matricula[2] != '-' || matricula[5] != '-'){
                  printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
             }else{
                 for(i=0;i<MAX_MATRICULA;i++){
                     matricula[i]=toupper(matricula[i]);
-                    if(matricula[i]==char){
-                            letras=matricula[i];
-                        }
-                        else{
-                            numeros=matriculas[i];
-                        }
-                    if(veiculos.dataFabrico.ano>=1937 || veiculos.dataFabrico.ano <1992){
-                        printf("%s-%d%d-%d%d",letras,numeros);
-                    }else if(veiculos.dataFabrico.ano>=1992 || veiculos.dataFabrico.ano <=1997)
                 }
+            return matricula;
             }
+        }else{
+            printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
 
-
-    }
-    while (tamanhoString == 1);
-}*/
+        }
+    }while (tamanhoString != MAX_STRING);
+}
 

@@ -119,38 +119,38 @@
 	"constantes.h"
 	"funcoes_auxiliares.h"
 
-1513562265 source:c:\users\sarita\documents\github\prog1\encomendas.c
+1513564424 source:c:\users\sarita\documents\github\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
 	"estruturas.h"
 	"constantes.h"
 	"encomendas.h"
+	"veiculo.h"
 
 1513299382 c:\users\sarita\documents\github\prog1\funcoes_auxiliares.h
 	"constantes.h"
 	"estruturas.h"
 
-1513562004 c:\users\sarita\documents\github\prog1\constantes.h
+1513564398 c:\users\sarita\documents\github\prog1\constantes.h
 
-1513299382 c:\users\sarita\documents\github\prog1\estruturas.h
+1513564398 c:\users\sarita\documents\github\prog1\estruturas.h
 	"constantes.h"
 
-1513562097 c:\users\sarita\documents\github\prog1\encomendas.h
+1513562444 c:\users\sarita\documents\github\prog1\encomendas.h
 
-1513455403 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
+1513565079 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
 	<stdio.h>
 	<ctype.h>
 	<string.h>
 	"funcoes_auxiliares.h"
 	"constantes.h"
 
-1513549868 source:c:\users\sarita\documents\github\prog1\main.c
+1513564398 source:c:\users\sarita\documents\github\prog1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
-	"constantes.h"
-	"veiculo.h"
+	"menuVeiculo.h"
 	"encomendas.h"
 
 1513514850 c:\users\sarita\documents\github\prog1\veiculo.h
@@ -174,4 +174,6 @@
 	"estruturas.h"
 	"veiculo.h"
 	"funcoes_auxiliares.h"
+
+1513513094 c:\users\sarita\documents\github\prog1\menuveiculo.h
 

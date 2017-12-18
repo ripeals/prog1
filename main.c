@@ -1,15 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funcoes_auxiliares.h"
-#include "constantes.h"
-#include "veiculo.h"
+#include "menuVeiculos.h"
 #include "encomendas.h"
-#include "menuVeiculo.h"
-
 
 int main()
 {
-
     int opcao=0;
     do{
         printf("\t\t\t  Distribuicao de Encomendas");
@@ -19,6 +15,7 @@ int main()
         printf("\n\tOpcao: ");
         scanf("%d",&opcao);
         limpaBuffer();
+
         switch(opcao){
             case 1:
                 menuVeiculo();

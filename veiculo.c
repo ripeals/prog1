@@ -25,7 +25,7 @@ void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
     else{
         printf("\n\tData de Fabrico: ");
         veiculos[*numVeiculos].dataFabrico=lerData();
-        //lerString("\nMatricula: ", matricula, MAX_MATRICULA);
+        veiculos[*numVeiculos].matricula = lerMatricula()
         veiculos[*numVeiculos].cargaMaxima = lerFloat("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
         veiculos[*numVeiculos].estado=1;
         (*numVeiculos)++;

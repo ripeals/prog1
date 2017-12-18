@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "estruturas.h"
+#include <stdlib.h>
 #include "veiculo.h"
 #include "funcoes_auxiliares.h"
 
@@ -25,7 +25,7 @@ void menuVeiculo(){
                 inserirVeiculo(veiculos,&numVeiculos);
                 break;
             case 2:
-                menuConsultas(veiculos, numVeiculos);
+                //menuConsultas(veiculos, numVeiculos);
                 break;
             case 3:
                 printf("\n\t\t\tListar Veiculos");
@@ -38,9 +38,9 @@ void menuVeiculo(){
                 break;
         }
     }while(opcao!=4);
-
 }
-void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
+
+/*void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
     int opcao=0;
     float cargaMedia=0;
     printf("\n\t\t\t1 - Consultar Veiculos");
@@ -66,4 +66,4 @@ void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
             case 4:
                 break;
         }
-}
+}*/
