@@ -184,3 +184,28 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
         }
     }
 }*/
+
+float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
+{
+    int i;
+    float pesoMedio, soma;
+    soma=0;
+    pesoMedio=0;
+
+    if(numEncomendas==0)
+    {
+        printf("\nNao existem encomendas. Por favor insira");
+
+    }
+    else
+    {
+        for(i=0; i<numEncomendas; i++)
+        {
+            soma+= encomendas[i].peso;
+        }
+        pesoMedio=soma/numEncomendas;
+    }
+
+    return pesoMedio;
+
+}

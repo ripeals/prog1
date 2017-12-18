@@ -3,7 +3,7 @@
 #include "ficheiros.h"
 
 
-void guardarFicheiroBinarioVeiculos (tipoVeiculos veiculos[], int numVeiculos)
+/*void guardarFicheiroBinarioVeiculos (tipoVeiculos veiculos[], int numVeiculos)
 {
     FILE *ficheiro;
     int numEscritos;
@@ -76,4 +76,4 @@ void guardarFicheiroBinarioEncomendas(tipoEncomendas encomendas, int numEncomend
 
 
 
-}
+}*/
