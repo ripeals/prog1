@@ -95,10 +95,17 @@ void apresentaDadosEncomendas(tipoEncomendas encomenda)
 
 
 
+<<<<<<< HEAD
 int procuraEncomendas (tipoEncomendas encomendas [], int numEncomendas, int numRegisto)
 {
     int posicao, i;
     posicao = NAO_EXISTE;
+=======
+int procuraEncomendas (tipoEncomendas encomendas [MAX_ENCOMENDAS], int numEncomendas, int numRegisto)
+{
+    int posicao, i;
+    posicao = -1;
+>>>>>>> 1a4992ea99f5279fc165993584fbef37eaa51030
     for(i=0; i<numEncomendas; i++)
     {
         if(encomendas[i].numRegisto == numRegisto)
@@ -112,6 +119,7 @@ int procuraEncomendas (tipoEncomendas encomendas [], int numEncomendas, int numR
 
 void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
 {
+<<<<<<< HEAD
     int posicao,numRegisto;
     if(numEncomendas == 0)
     {
@@ -121,10 +129,25 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     {
         numRegisto = lerInteiro("\n\t\t\tNumero de registo: ",1,MAX_NUM_ENCOMENDA);
         posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
+=======
+    int posicao;
+    if(numEncomendas == 0)
+    {
+        printf("\n\tATENCAO: nao existem encomendas inseridas!!! Por favor, insira.");
+        inserirEncomendas(encomendas, &numEncomendas);
+    }
+    else
+    {
+        //posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
+>>>>>>> 1a4992ea99f5279fc165993584fbef37eaa51030
 
         if(posicao == NAO_EXISTE) //nao existe no vetor
         {
+<<<<<<< HEAD
             printf("A encomenda com o numero de registo %d nao e valida ",numRegisto);
+=======
+            //printf("A encomenda com o numero de registo %d nao e valida ", numRegisto);
+>>>>>>> 1a4992ea99f5279fc165993584fbef37eaa51030
         }
         else
         {
@@ -133,7 +156,7 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     }
 }
 
-int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)  //nao esta a funcionar
+int eliminarEncomendas (tipoEncomendas encomendas[], int numEncomendas)  //nao esta a funcionar
 {
     int posicao, numRegisto, i;
     if(numEncomendas == 0)
