@@ -28,7 +28,7 @@ void menuEncomendas()
             break;
         case 2:
             printf("\n\t\t\tConsultar Encomendas");
-            //consultarEncomendas(encomendas, &numEncomendas, numRegisto);
+            consultarEncomendas(encomendas, numEncomendas, numRegisto);
             break;
         case 3:
             printf("\n\t\t\tListar Encomendas");
@@ -162,6 +162,7 @@ int eliminarEncomendas (tipoEncomendas encomendas[], int numEncomendas)  //nao e
             }
             numEncomendas--;
         }
+        return numEncomendas;
     }
-    return numEncomendas;
+
 }
