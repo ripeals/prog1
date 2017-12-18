@@ -19,25 +19,25 @@ void menuEncomendas()
         printf("\n\t3 - Listar encomendas");
         printf("\n\t4 - Eliminar encomendas");
         printf("\n\t5 - Carregamento de encomendas");
-        printf("\n\t5 - Sair");
+        printf("\n\t6 - Sair");
         printf("\n\tOpcao: ");
         scanf("%d", &opcao);
         switch(opcao)
         {
         case 1:
-            printf("\n\t\t\tInserir Encomendas");
+            printf("\n\t\t\t\tInserir Encomendas");
             inserirEncomendas(encomendas, &numEncomendas);
             break;
         case 2:
-            printf("\n\t\t\tConsultar Encomendas");
+            printf("\n\t\t\t\tConsultar Encomendas");
             consultarEncomendas(encomendas, numEncomendas);
             break;
         case 3:
-            printf("\n\t\t\tListar Encomendas");
+            printf("\n\t\t\t\tListar Encomendas");
             listarEncomendas (encomendas, numEncomendas);
             break;
         case 4:
-            printf("\n\t\t\tEliminar Encomenda");
+            printf("\n\t\t\t\tEliminar Encomenda");
             numEncomendas=eliminarEncomendas(encomendas, numEncomendas);
             break;
         case 5:
@@ -61,7 +61,7 @@ void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
     }
     else
     {
-        encomendas[*numEncomendas].numRegisto = lerInteiro("\n\tNumero de Registo ",1,MAX_NUM_ENCOMENDA);
+        encomendas[*numEncomendas].numRegisto = lerInteiro("\n\n\tNumero de Registo ",1,MAX_NUM_ENCOMENDA);
         printf("\tData de Registo: ");
         encomendas[*numEncomendas].dataRegisto = lerData();
         encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);
@@ -89,11 +89,11 @@ void listarEncomendas (tipoEncomendas encomendas[], int numEncomendas)
 }
 void apresentaDadosEncomendas(tipoEncomendas encomenda)
 {
-    printf("\n\tNumero de Registo: %d",encomenda.numRegisto);
+    printf("\n\n\tNumero de Registo: %d",encomenda.numRegisto);
     printf("\n\tData de Registo: %d/%d/%d", encomenda.dataRegisto.dia, encomenda.dataRegisto.mes, encomenda.dataRegisto.ano);
     printf("\n\tPeso: %.2f",encomenda.peso);
     printf("\n\tDestino: %s", encomenda.destino);
-    printf("\n\tObservacoes: %s",encomenda.obs);
+    printf("\tObservacoes: %s",encomenda.obs);
 }
 
 int procuraEncomendas (tipoEncomendas encomendas [], int numEncomendas, int numRegisto)
@@ -116,16 +116,16 @@ void consultarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     int posicao,numRegisto;
     if(numEncomendas == 0)
     {
-        printf("\n\t\tATENCAO: Nao existem encomendas. Por favor, insira.");
+        printf("\n\tATENCAO: Nao existem encomendas. Por favor, insira.");
     }
     else
     {
-        numRegisto = lerInteiro("\n\t\t\tNumero de registo: ",1,MAX_NUM_ENCOMENDA);
+        numRegisto = lerInteiro("\n\n\tNumero de registo: ",1,MAX_NUM_ENCOMENDA);
         posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
 
         if(posicao == NAO_EXISTE) //nao existe no vetor
         {
-            printf("\n\t\tA encomenda com o numero de registo %d nao e valida ",numRegisto);
+            printf("\n\tA encomenda com o numero de registo %d nao e valida ",numRegisto);
         }
         else
         {
@@ -139,17 +139,17 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     int posicao, numRegisto, i;
     if(numEncomendas == 0)
     {
-        printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+        printf("\n\tERRO: Nao existem encomendas. Por favor insira ");
     }
     else
     {
-        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
+        numRegisto = lerInteiro("\n\n\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
         posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
-        if(posicao==-1)
+        if(posicao==NAO_EXISTE)
         {
             do
             {
-                printf("\n\t\tPor favor insira um numero de registo valido.");
+                printf("\n\tPor favor insira um numero de registo valido.");
                 numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
             }
             while (numRegisto>1 || numRegisto<MAX_NUM_ENCOMENDA);
@@ -161,7 +161,7 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
                 encomendas[i]=encomendas[i+1]; //?
             }
             numEncomendas--;
-            printf("\n\t\tEncomenda eliminada");
+            printf("\n\t - Encomenda eliminada com sucesso - \n\n");
         }
 
     }

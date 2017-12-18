@@ -10,7 +10,7 @@ void menuVeiculo(){
     numVeiculos=0;
     opcao=0;
     do{
-        printf("\t\t\t\tMenu dos Veiculos");
+        printf("\n\t\t\t\tMenu dos Veiculos");
         printf("\n\t1 - Inserir Veiculo");
         printf("\n\t2 - Consultar");
         printf("\n\t3 - Listar Veiculo");
@@ -21,14 +21,14 @@ void menuVeiculo(){
 
         switch(opcao){
             case 1:
-                printf("\n\t\t\tInserir Veiculos");
+                printf("\n\t\t\t\tInserir Veiculos");
                 inserirVeiculo(veiculos,&numVeiculos);
                 break;
             case 2:
                 //menuConsultas(veiculos, numVeiculos);
                 break;
             case 3:
-                printf("\n\t\t\tListar Veiculos");
+                printf("\n\t\t\t\tListar Veiculos");
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:

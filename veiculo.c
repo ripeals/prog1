@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "veiculo.h"
 #include "estruturas.h"
 #include "constantes.h"
@@ -26,8 +27,8 @@ void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
     else{
         printf("\n\tData de Fabrico: ");
         veiculos[*numVeiculos].dataFabrico=lerData();
-        veiculos[*numVeiculos].matricula = lerMatricula(matricula,tipoVeiculos veiculos));
-        veiculos[*numVeiculos].cargaMaxima = lerFloat("\n\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
+       // veiculos[*numVeiculos].matricula = lerMatricula(matricula,tipoVeiculos veiculos);
+        veiculos[*numVeiculos].cargaMaxima = lerFloat("\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
         veiculos[*numVeiculos].estado=1;
         (*numVeiculos)++;
     }
@@ -46,7 +47,7 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos){
 }
 void apresentaDadosVeiculos(tipoVeiculos veiculo){
     printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
-    printf("\n\tCarga maxima: %.2f\n",veiculo.cargaMaxima);
+    printf("\n\tCarga maxima: %.2f\n\n",veiculo.cargaMaxima);
 }
 /*void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
     int posicao;

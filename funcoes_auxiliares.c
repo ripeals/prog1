@@ -130,7 +130,7 @@ tipoData lerData()
 
     return data;
 }
-void lerMatricula(char matricula[MAX_STRING])//está mal
+/*void lerMatricula(char matricula[MAX_STRING])//está mal
 {
 
     int tamanhoString,i;
@@ -153,5 +153,5 @@ void lerMatricula(char matricula[MAX_STRING])//está mal
 
         }
     }while (tamanhoString != MAX_MATRICULA);
-}
+}*/
 

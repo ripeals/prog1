@@ -22,6 +22,8 @@ typedef struct{
     int estado;
     float cargaMaxima;
     float cargaDisponivel;
+    int qtViagens;
+    int qtEncomendasT;
 }tipoVeiculos;
 
 #endif // ESTRUTURAS_H_INCLUDED

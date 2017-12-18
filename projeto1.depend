@@ -68,45 +68,46 @@
 1513203583 c:\users\sara\documents\github\prog1\estruturas.h
 	"constantes.h"
 
-1513543541 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
+1513615600 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
 	"estruturas.h"
 	"constantes.h"
 	"encomendas.h"
+	"veiculo.h"
 
-1513532700 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
+1513612937 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
 	<stdio.h>
 	<ctype.h>
 	<string.h>
 	"funcoes_auxiliares.h"
 	"constantes.h"
 
-1513532700 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
+1513612168 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
 	"constantes.h"
 	"estruturas.h"
 
-1513532704 c:\users\rita\desktop\aserio\prog1\constantes.h
+1513612168 c:\users\rita\desktop\aserio\prog1\constantes.h
 
-1513270921 c:\users\rita\desktop\aserio\prog1\estruturas.h
+1513614846 c:\users\rita\desktop\aserio\prog1\estruturas.h
 	"constantes.h"
 
-1513533259 source:c:\users\rita\desktop\aserio\prog1\main.c
+1513612168 source:c:\users\rita\desktop\aserio\prog1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
-	"constantes.h"
-	"veiculo.h"
+	"menuVeiculos.h"
 	"encomendas.h"
 
 1513532704 c:\users\rita\desktop\aserio\prog1\veiculo.h
 	"estruturas.h"
 
-1513543397 c:\users\rita\desktop\aserio\prog1\encomendas.h
+1513612168 c:\users\rita\desktop\aserio\prog1\encomendas.h
 
-1513536933 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
+1513614846 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>
+	<stdlib.h>
 	"veiculo.h"
 	"estruturas.h"
 	"constantes.h"
@@ -184,4 +185,21 @@
 	<stdlib.h>
 	"veiculo.h"
 	"funcoes_auxiliares.h"
+
+1513612168 c:\users\rita\desktop\aserio\prog1\menuveiculos.h
+
+1513614087 source:c:\users\rita\desktop\aserio\prog1\menuveiculos.c
+	<stdio.h>
+	<stdlib.h>
+	"veiculo.h"
+	"funcoes_auxiliares.h"
+
+1513615710 source:c:\users\rita\desktop\aserio\prog1\ficheiros.c
+	<stdlib.h>
+	<stdio.h>
+	"ficheiros.h"
+
+1513615765 c:\users\rita\desktop\aserio\prog1\ficheiros.h
+	"veiculo.h"
+	"encomendas.h"
 
