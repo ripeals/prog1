@@ -1,7 +1,7 @@
 #ifndef ENCOMENDAS_H_INCLUDED
 #define ENCOMENDAS_H_INCLUDED
 
-void menuEncomendas();
+int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos veiculos[],int numVeiculos);
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas);
 void listarEncomendas (tipoEncomendas encomendas[], int numEncomendas);
 void apresentaDadosEncomendas(tipoEncomendas encomenda);

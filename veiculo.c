@@ -47,8 +47,24 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos){
 }
 void apresentaDadosVeiculos(tipoVeiculos veiculo){
     printf("\n\tMatricula: %s",veiculo.matricula);
-    printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
-    printf("\n\tCarga maxima: %.2f\n\n",veiculo.cargaMaxima);
+    printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.ano);
+    printf("\n\tCarga maxima: %.2f",veiculo.cargaMaxima);
+    printf("\n\tEstado: ");
+    switch (veiculo.estado)
+    {
+        case DISPONIVEL:
+            printf("disponivel");
+            break;
+        case EM_CARGA:
+            printf("em carga");
+            break;
+        case A_TRANSPORTAR:
+            printf("a transportar encomendas");
+        case DE_REGRESSO:
+            printf("esta de volta");
+        case AVARIADO:
+            printf("esta avariado");
+    }
 }
 void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]){//ainda nao funciona
     int posicao;

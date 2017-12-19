@@ -2,7 +2,6 @@
 #define VEICULO_H_INCLUDED
 #include "estruturas.h"
 
-void menuVeiculo();
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
 int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_MATRICULA]);
 void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]);

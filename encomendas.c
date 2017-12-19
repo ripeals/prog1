@@ -6,12 +6,8 @@
 #include "encomendas.h"
 #include "veiculo.h"
 
-void menuEncomendas()
+int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos veiculos[],int numVeiculos)
 {
-    tipoEncomendas encomendas[MAX_ENCOMENDAS];
-    tipoVeiculos veiculos[MAX_VEICULOS];
-    int numVeiculos=0;
-    int numEncomendas=0;
     int opcao=0;
     do
     {
@@ -91,9 +87,23 @@ void listarEncomendas (tipoEncomendas encomendas[], int numEncomendas)
 }
 void apresentaDadosEncomendas(tipoEncomendas encomenda)
 {
-    printf("\n\n\tNumero de Registo: %d",encomenda.numRegisto);
+    printf("\n\tNumero de Registo: %d",encomenda.numRegisto);
     printf("\n\tData de Registo: %d/%d/%d", encomenda.dataRegisto.dia, encomenda.dataRegisto.mes, encomenda.dataRegisto.ano);
     printf("\n\tPeso: %.2f",encomenda.peso);
+    printf("\n\tEstado: ");
+    switch (encomenda.estado)
+    {
+        case REGISTADA:
+            printf("registada");
+            break;
+        case CARREGADA:
+            printf("carregada");
+            break;
+        case ENTREGUE:
+            printf("entregue");
+        case DEVOLVIDA:
+            printf("devolvida");
+    }
     printf("\n\tDestino: %s", encomenda.destino);
     printf("\tObservacoes: %s",encomenda.obs);
 }

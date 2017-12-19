@@ -6,6 +6,10 @@
 
 int main()
 {
+    tipoVeiculos veiculos[MAX_VEICULOS];
+    tipoEncomendas encomendas[MAX_ENCOMENDAS];
+    int numVeiculos=0;
+    int numEncomendas=0;
     int opcao=0;
     do{
         printf("\t\t\t  Distribuicao de Encomendas");
@@ -18,10 +22,10 @@ int main()
 
         switch(opcao){
             case 1:
-                menuVeiculo();
+                numVeiculos = menuVeiculo(veiculos,numVeiculos);
                 break;
             case 2:
-                menuEncomendas();
+                numEncomendas = menuEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
                 break;
             default:
                 printf("Introduza uma opcao valida.");
