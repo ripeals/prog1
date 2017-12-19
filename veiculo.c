@@ -6,9 +6,9 @@
 #include "funcoes_auxiliares.h"
 
 
-/*void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){//nao esta a funcionar
+int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_MATRICULA]){
     int posicao, i;
-    posicao=-1;
+    posicao = NAO_EXISTE;
 
     for(i=0;i<numVeiculos;i++){
         if(veiculos[i].matricula == matricula){
@@ -17,19 +17,18 @@
         }
     }
     return posicao;
-}*/
+}
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
-    char matricula[MAX_STRING];
     if(*numVeiculos == MAX_VEICULOS){
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
     }
     else{
         printf("\n\tData de Fabrico: ");
-        veiculos[*numVeiculos].dataFabrico=lerData();
-       // veiculos[*numVeiculos].matricula = lerMatricula(matricula,tipoVeiculos veiculos);
+        veiculos[*numVeiculos].dataFabrico = lerData();
+        lerString("\n\tInsira a matricula(__-__-__): ",veiculos[*numVeiculos].matricula, MAX_MATRICULA);
         veiculos[*numVeiculos].cargaMaxima = lerFloat("\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
-        veiculos[*numVeiculos].estado=1;
+        veiculos[*numVeiculos].estado = 1;
         (*numVeiculos)++;
     }
 }
@@ -46,26 +45,29 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos){
     }
 }
 void apresentaDadosVeiculos(tipoVeiculos veiculo){
+    printf("\n\tMatricula: %s",veiculo.matricula);
     printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
     printf("\n\tCarga maxima: %.2f\n\n",veiculo.cargaMaxima);
 }
-/*void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
+void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
     int posicao;
+    char matricula[MAX_MATRICULA];
     if(numVeiculos == 0){
         printf("\n\tATENCAO: nao existem veiculos inseridos");
     }
     else{
+        lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
         posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
 
-        if(posicao == -1){//nao existe no vetor
+        if(posicao == NAO_EXISTE){//nao existe no vetor
             printf("O veiculos com a %s matricula nao existe.",matricula);
         }
         else{
-            apresentaDadosVeiculos(veiculos[posicao],0);
+            apresentaDadosVeiculos(veiculos[posicao]);
         }
     }
 
-}*/
+}
 /*float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
     int i;
     float carga,cargaMedia;

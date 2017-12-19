@@ -25,7 +25,7 @@ void menuVeiculo(){
                 inserirVeiculo(veiculos,&numVeiculos);
                 break;
             case 2:
-                //menuConsultas(veiculos, numVeiculos);
+                menuConsultas(veiculos, numVeiculos);
                 break;
             case 3:
                 printf("\n\t\t\t\tListar Veiculos");
@@ -40,9 +40,9 @@ void menuVeiculo(){
     }while(opcao!=4);
 }
 
-/*void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
+void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
     int opcao=0;
-    float cargaMedia=0;
+    //float cargaMedia=0;
     printf("\n\t\t\t1 - Consultar Veiculos");
     printf("\n\t\t\t2 - Consultar quantidade de veiculos");
     printf("\n\t\t\t3 - Carga media dos veiculos em viagem");
@@ -53,7 +53,7 @@ void menuVeiculo(){
         switch(opcao){
             case 1:
                 printf("\n\t\t\tConsultar Veiculos");
-                //consultarVeiculos();
+                consultarVeiculos(veiculos,numVeiculos);
                 break;
             case 2:
                 printf("\n\t\t\tConsultar quantidade de veiculos");
@@ -66,4 +66,4 @@ void menuVeiculo(){
             case 4:
                 break;
         }
-}*/
+}

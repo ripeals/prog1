@@ -130,22 +130,22 @@ tipoData lerData()
 
     return data;
 }
-/*void lerMatricula(char matricula[MAX_STRING])//está mal
+/*void lerMatricula(char matricula[MAX_STRING], tipoVeiculos veiculos[MAX_VEICULOS],int *numVeiculos)//está mal
 {
 
     int tamanhoString,i;
 
     do
     {
-        lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
-        tamanhoString = strlen(matricula);
+        lerString("\n\tInsira a matricula(__-__-__): ",veiculos.matricula, MAX_MATRICULA);
+        tamanhoString = strlen(veiculos.matricula);
 
         for(i=0;i<MAX_MATRICULA;i++){
-            matricula[i]=toupper(matricula[i]);
+            veiculos.matricula[i]=toupper(veiculos.matricula[i]);
         }
 
         if(tamanhoString == MAX_MATRICULA){
-           if(matricula[2] != '-' || matricula[5] != '-')
+           if(veiculos.matricula[2] != '-' || veiculos.matricula[5] != '-')
                 printf("\n\tERRO: A matricula nao foi inserida corretamente. Tente novamente.");
 
         }else{
@@ -153,5 +153,5 @@ tipoData lerData()
 
         }
     }while (tamanhoString != MAX_MATRICULA);
-}*/
-
+}
+*/
