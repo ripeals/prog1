@@ -9,6 +9,8 @@
 void menuEncomendas()
 {
     tipoEncomendas encomendas[MAX_ENCOMENDAS];
+    tipoVeiculos veiculos[MAX_VEICULOS];
+    int numVeiculos=0;
     int numEncomendas=0;
     int opcao=0;
     do
@@ -42,13 +44,13 @@ void menuEncomendas()
             break;
         case 5:
             printf("\n\t\t\tCarregamento de Encomendas");
-            //carregamentoEncomendas();
+            carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
             break;
         default:
             printf("Por favor, introduza uma opcao valida.");
         }
     }
-    while(opcao != 4);
+    while(opcao != 6);
 
 }
 
@@ -66,8 +68,8 @@ void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
         encomendas[*numEncomendas].dataRegisto = lerData();
         encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);
         lerString("\tDestino: ", encomendas[*numEncomendas].destino, MAX_STRING);
-        encomendas[*numEncomendas].estado=1;
         lerString("\tObservacoes: ", encomendas[*numEncomendas].obs, MAX_STRING );
+        encomendas[*numEncomendas].estado=REGISTADA;
         (*numEncomendas)++;
     }
 }
@@ -167,24 +169,51 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     }
     return numEncomendas;
 }
-void carregamentoEncomendas(){
-    tipoVeiculos veiculos;
-    int numRegisto;
+void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos){
+    int numDeEncomendas,opcao,posicao,i;
     char destino[MAX_STRING],matricula[MAX_MATRICULA];
-    if(numEncomendas == 0){
-        printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
-    }
-    else{
-        lerString("\n\t\tDestino: ",destino,MAX_STRING);
-        lerString("\n\tInsira a matricula(__-__-__): ", matricula, MAX_MATRICULA);
-        if(veiculos[numVeiculo].estado==DISPONIVEL){
-            cargaatual+=encomendas.peso;
-            veiculos.cargaDisponivel = veiculos.cargaMaxima - cargaatual;
-        }
 
+    numDeEncomendas=0;
+    opcao=0;
 
+    printf("\n\t\t1 - Selecao Automatica");
+    printf("\n\t\t2 - Selecao Manual");
+    scanf("%d",&opcao);
+    limpaBuffer();
+    switch(opcao){
+        case 1:
+            break;
+        case 2:
+            if(numEncomendas == 0){
+                printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+            }
+            else{
+                lerString("\n\t\tDestino: ",destino,MAX_STRING);
+                lerString("\n\tInsira a matricula(__-__-__): ", matricula, MAX_MATRICULA);
+                printf("%s",matricula);
+                posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
+                printf("%d",posicao);
+                if(posicao == NAO_EXISTE){
+                    printf("\n\t\tNao existe nenhum veiculo com a matricula que introduziu.");
+                }
+                else{
+                    if(veiculos[posicao].estado == DISPONIVEL){
+                        for(i=0;i<numEncomendas;i++){
+                            if(encomendas[i].estado == REGISTADA){
+                                numDeEncomendas++;
+                                encomendas[i].estado == CARREGADA;
+                                veiculos[posicao].estado == EM_CARGA;
+                                printf("Encomenda %d carregada",encomendas[i].numRegisto);
+                            }
+                        }
+                    }
+                    else{
+                        printf("\n\t\tEste veiculo nao se encontra disponivel");
+                    }
+                }
+            }
+            break;
 
-        }
     }
 }
 
