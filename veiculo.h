@@ -4,8 +4,8 @@
 
 void menuVeiculo();
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
-void procuraVeiculo(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos,char matricula[MAX_MATRICULA]);
-void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos);
+int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_MATRICULA]);
+void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]);
 void listarVeiculos(tipoVeiculos veiculos[],int numVeiculos);
 void apresentaDadosVeiculos(tipoVeiculos veiculo);
 float cargaMediaVeiculos(tipoVeiculos veiculos[],int numVeiculos);

@@ -6,6 +6,7 @@
 void menuVeiculo(){
     int numVeiculos,opcao;
     tipoVeiculos veiculos[MAX_VEICULOS];
+    char matricula[MAX_MATRICULA];
     //char matricula[MAX_MATRICULA];
     numVeiculos=0;
     opcao=0;
@@ -25,7 +26,7 @@ void menuVeiculo(){
                 inserirVeiculo(veiculos,&numVeiculos);
                 break;
             case 2:
-                menuConsultas(veiculos, numVeiculos);
+                menuConsultas(veiculos, numVeiculos,matricula);
                 break;
             case 3:
                 printf("\n\t\t\t\tListar Veiculos");
@@ -40,7 +41,7 @@ void menuVeiculo(){
     }while(opcao!=4);
 }
 
-void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
+void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos,char matricula[MAX_MATRICULA]){
     int opcao=0;
     //float cargaMedia=0;
     printf("\n\t\t\t1 - Consultar Veiculos");
@@ -53,7 +54,7 @@ void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos){
         switch(opcao){
             case 1:
                 printf("\n\t\t\tConsultar Veiculos");
-                consultarVeiculos(veiculos,numVeiculos);
+                consultarVeiculos(veiculos,numVeiculos,matricula);
                 break;
             case 2:
                 printf("\n\t\t\tConsultar quantidade de veiculos");

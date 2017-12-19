@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "veiculo.h"
 #include "estruturas.h"
 #include "constantes.h"
@@ -11,8 +12,8 @@ int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_M
     posicao = NAO_EXISTE;
 
     for(i=0;i<numVeiculos;i++){
-        if(veiculos[i].matricula == matricula){
-            posicao =i;
+        if(strcmp(veiculos[i].matricula, matricula) == 0){
+            posicao = i;
             i = numVeiculos;
         }
     }
@@ -49,9 +50,8 @@ void apresentaDadosVeiculos(tipoVeiculos veiculo){
     printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.dia);
     printf("\n\tCarga maxima: %.2f\n\n",veiculo.cargaMaxima);
 }
-void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao funciona
+void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]){//ainda nao funciona
     int posicao;
-    char matricula[MAX_MATRICULA];
     if(numVeiculos == 0){
         printf("\n\tATENCAO: nao existem veiculos inseridos");
     }
@@ -60,7 +60,7 @@ void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos){//ainda nao fun
         posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
 
         if(posicao == NAO_EXISTE){//nao existe no vetor
-            printf("O veiculos com a %s matricula nao existe.",matricula);
+            printf("\nO veiculo com a %s matricula nao existe.",matricula);
         }
         else{
             apresentaDadosVeiculos(veiculos[posicao]);

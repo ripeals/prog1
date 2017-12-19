@@ -167,23 +167,26 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     }
     return numEncomendas;
 }
-/*void carregamentoEncomendas(){
+void carregamentoEncomendas(){
+    tipoVeiculos veiculos;
     int numRegisto;
-    char destino[MAX_STRING];
+    char destino[MAX_STRING],matricula[MAX_MATRICULA];
     if(numEncomendas == 0){
         printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
     }
     else{
-        numRegisto = lerInteiro("\n\t\tNumero de Registo: ",1, MAX_NUM_ENCOMENDA);
-        posicao = procuraEncomendas(encomendas, numEncomendas, numRegisto);
-        if(encomendas[posicao].estado == REGISTADA){
-            lerString("\n\t\tDestino: ",destino,MAX_STRING);
-            //matricula
+        lerString("\n\t\tDestino: ",destino,MAX_STRING);
+        lerString("\n\tInsira a matricula(__-__-__): ", matricula, MAX_MATRICULA);
+        if(veiculos[numVeiculo].estado==DISPONIVEL){
+            cargaatual+=encomendas.peso;
+            veiculos.cargaDisponivel = veiculos.cargaMaxima - cargaatual;
+        }
+
 
 
         }
     }
-}*/
+}
 
 float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
 {

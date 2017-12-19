@@ -2,7 +2,7 @@
 #define CONSTANTES_H_INCLUDED
 
 #define MAX_STRING 50
-#define MAX_MATRICULA 8
+#define MAX_MATRICULA 9
 #define MAX_ANO 2017
 #define MIN_ANO 1937
 #define MIN_MES 1
