@@ -53,6 +53,7 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
 
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
 {
+    int posicao;
     if(*numEncomendas == MAX_ENCOMENDAS)
     {
         printf("\n\tERRO: Nao e possivel inserir uma nova encomenda. Foi atingido o maximo das encomendas.");
@@ -180,10 +181,9 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     return numEncomendas;
 }
 void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos){
-    int numDeEncomendas,opcao,posicao,i;
+    int opcao,posicao,i;
     char destino[MAX_STRING],matricula[MAX_MATRICULA];
 
-    numDeEncomendas=0;
     opcao=0;
 
     printf("\n\t\t1 - Selecao Automatica");
@@ -192,6 +192,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
     limpaBuffer();
     switch(opcao){
         case 1:
+
             break;
         case 2:
             if(numEncomendas == 0){
@@ -210,9 +211,14 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                     if(veiculos[posicao].estado == DISPONIVEL){
                         for(i=0;i<numEncomendas;i++){
                             if(encomendas[i].estado == REGISTADA){
-                                numDeEncomendas++;
-                                encomendas[i].estado == CARREGADA;
-                                veiculos[posicao].estado == EM_CARGA;
+                                strcpy(encomendas[i].matricula,veiculos[posicao].matricula);
+                                printf("\n%s %s",encomendas[i].matricula,veiculos[posicao].matricula);
+                                veiculos[posicao].numEncomendas++;
+                                printf("\n%d",numEncomendas);
+                                veiculos[posicao].estado = EM_CARGA;
+                                printf("\n%d",veiculos[posicao].estado);
+                                encomendas[i].estado = CARREGADA;
+                                printf("\n%d",encomendas[i].estado);
                                 printf("Encomenda %d carregada",encomendas[i].numRegisto);
                             }
                         }

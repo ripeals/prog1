@@ -14,6 +14,7 @@ typedef struct{
     char destino[MAX_STRING];
     int estado;
     char obs[MAX_STRING];
+    char matricula[MAX_MATRICULA];
 }tipoEncomendas;
 
 typedef struct{
@@ -24,6 +25,7 @@ typedef struct{
     float cargaDisponivel;
     int qtViagens;
     int qtEncomendasT;
+    int numEncomendas;
 }tipoVeiculos;
 
 #endif // ESTRUTURAS_H_INCLUDED

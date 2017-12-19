@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "ficheiros.h"
 
-
 /*void guardarFicheiroBinarioVeiculos (tipoVeiculos veiculos[], int numVeiculos)
 {
     FILE *ficheiro;

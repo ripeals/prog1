@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "veiculo.h"
 #include "funcoes_auxiliares.h"
+#include "menuVeiculos.h"
 
-void menuVeiculo(){
-    int numVeiculos,opcao;
-    tipoVeiculos veiculos[MAX_VEICULOS];
+int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
+    int opcao;
     char matricula[MAX_MATRICULA];
     //char matricula[MAX_MATRICULA];
     numVeiculos=0;
@@ -33,6 +33,7 @@ void menuVeiculo(){
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:
+
                 break;
             default:
                 printf("\tIntroduza uma opcao valida\n\n");
