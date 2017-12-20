@@ -28,7 +28,7 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula
     int i;
     for(i=0; i<numVeiculos; i++)
     {
-        if(strcmp(matricula,veiculos[i].matricula) == 1)
+        if(strcmp(matricula,veiculos[i].matricula))
         {
 
             do
@@ -36,7 +36,8 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula
                 printf("\n\tMatricula ja existe");
                 lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
             }
-            while(strcmp(matricula,veiculos[i].matricula)== 1);
+            while(strcmp(matricula,veiculos[i].matricula)==0);
+
         }
         else
         {
