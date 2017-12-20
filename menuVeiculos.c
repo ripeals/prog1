@@ -6,6 +6,7 @@
 
 int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
     int opcao;
+int posicao=0;
     char matricula[MAX_MATRICULA];
     //char matricula[MAX_MATRICULA];
     numVeiculos=0;
@@ -23,7 +24,7 @@ int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
         switch(opcao){
             case 1:
                 printf("\n\t\t\t\tInserir Veiculos");
-                inserirVeiculo(veiculos,&numVeiculos);
+                inserirVeiculo(veiculos,&numVeiculos,posicao);
                 break;
             case 2:
                 menuConsultas(veiculos, numVeiculos,matricula);

@@ -45,9 +45,8 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
         default:
             printf("Por favor, introduza uma opcao valida.");
         }
-    }
-    while(opcao != 6);
-
+    }while(opcao != 6);
+return opcao;
 }
 
 
