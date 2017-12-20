@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "funcoes_auxiliares.h"
 #include "estruturas.h"
 #include "constantes.h"
@@ -52,7 +53,7 @@ return opcao;
 
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
 {
-    int posicao;
+    int posicao = 0;
     if(*numEncomendas == MAX_ENCOMENDAS)
     {
         printf("\n\tERRO: Nao e possivel inserir uma nova encomenda. Foi atingido o maximo das encomendas.");

@@ -1,88 +1,13 @@
 # depslib dependency file v1.0
-1513182806 source:c:\users\rita\desktop\projeto1\encomendas.c
+1513804995 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
-
-1513183326 source:c:\users\rita\desktop\projeto1\main.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
-	"constantes.h"
-	"veiculo.h"
-	"encomendas.h"
-
-1513181975 c:\users\rita\desktop\projeto1\funcoes_auxiliares.h
-	"constantes.h"
-
-1513182363 c:\users\rita\desktop\projeto1\constantes.h
-
-1513181924 c:\users\rita\desktop\projeto1\veiculo.h
-
-1513183489 c:\users\rita\desktop\projeto1\encomendas.h
-
-1513181924 source:c:\users\rita\desktop\projeto1\veiculo.c
-	<stdio.h>
-	"veiculo.h"
-
-1513184237 source:c:\users\rita\desktop\projeto1\funcoes_auxiliares.c
-	<stdio.h>
-	<ctype.h>
 	<string.h>
 	"funcoes_auxiliares.h"
-	"constantes.h"
-
-1513292346 source:c:\users\sara\documents\github\prog1\encomendas.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
-	"estruturas.h"
-	"constantes.h"
-	"encomendas.h"
-
-1513292346 source:c:\users\sara\documents\github\prog1\funcoes_auxiliares.c
-	<stdio.h>
-	<ctype.h>
-	<string.h>
-	"funcoes_auxiliares.h"
-	"constantes.h"
-
-1513292346 c:\users\sara\documents\github\prog1\funcoes_auxiliares.h
-	"constantes.h"
-	"estruturas.h"
-
-1513292346 c:\users\sara\documents\github\prog1\constantes.h
-
-1513292909 source:c:\users\sara\documents\github\prog1\main.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
-	"constantes.h"
-	"veiculo.h"
-	"encomendas.h"
-
-1513293500 c:\users\sara\documents\github\prog1\veiculo.h
-	"estruturas.h"
-
-1513292346 c:\users\sara\documents\github\prog1\encomendas.h
-
-1513203583 c:\users\sara\documents\github\prog1\estruturas.h
-	"constantes.h"
-
-1513793745 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
 	"estruturas.h"
 	"constantes.h"
 	"encomendas.h"
 	"veiculo.h"
-
-1513667623 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
-	<stdio.h>
-	<ctype.h>
-	<string.h>
-	"funcoes_auxiliares.h"
-	"constantes.h"
 
 1513667623 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
 	"constantes.h"
@@ -93,6 +18,18 @@
 1513707768 c:\users\rita\desktop\aserio\prog1\estruturas.h
 	"constantes.h"
 
+1513701669 c:\users\rita\desktop\aserio\prog1\encomendas.h
+
+1513804892 c:\users\rita\desktop\aserio\prog1\veiculo.h
+	"estruturas.h"
+
+1513667623 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
 1513707765 source:c:\users\rita\desktop\aserio\prog1\main.c
 	<stdio.h>
 	<stdlib.h>
@@ -100,111 +37,21 @@
 	"menuVeiculos.h"
 	"encomendas.h"
 
-1513800869 c:\users\rita\desktop\aserio\prog1\veiculo.h
-	"estruturas.h"
-
-1513701669 c:\users\rita\desktop\aserio\prog1\encomendas.h
-
-1513801207 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"veiculo.h"
-	"estruturas.h"
-	"constantes.h"
-	"funcoes_auxiliares.h"
-
-1513293592 source:c:\users\sara\documents\github\prog1\veiculo.c
-	<stdio.h>
-	"veiculo.h"
-	"estruturas.h"
-	"constantes.h"
-	"funcoes_auxiliares.h"
-
-1513764694 source:c:\users\sarita\documents\github\prog1\encomendas.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
-	"estruturas.h"
-	"constantes.h"
-	"encomendas.h"
-	"veiculo.h"
-
-1513646203 c:\users\sarita\documents\github\prog1\funcoes_auxiliares.h
-	"constantes.h"
-	"estruturas.h"
-
-1513763901 c:\users\sarita\documents\github\prog1\constantes.h
-
-1513701545 c:\users\sarita\documents\github\prog1\estruturas.h
-	"constantes.h"
-
-1513699360 c:\users\sarita\documents\github\prog1\encomendas.h
-
-1513679097 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
-	<stdio.h>
-	<ctype.h>
-	<string.h>
-	"funcoes_auxiliares.h"
-	"constantes.h"
-
-1513699316 source:c:\users\sarita\documents\github\prog1\main.c
-	<stdio.h>
-	<stdlib.h>
-	"funcoes_auxiliares.h"
-	"menuVeiculos.h"
-	"encomendas.h"
-
-1513763901 c:\users\sarita\documents\github\prog1\veiculo.h
-	"estruturas.h"
-
-1513763901 source:c:\users\sarita\documents\github\prog1\veiculo.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"veiculo.h"
-	"estruturas.h"
-	"constantes.h"
-	"funcoes_auxiliares.h"
-
-1513514850 source:c:\users\sarita\documents\github\prog1\menuveiculo.c
-	<stdio.h>
-	"estruturas.h"
-	"veiculo.h"
-	"funcoes_auxiliares.h"
-
-1513536940 source:c:\users\rita\desktop\aserio\prog1\menuveiculo.c
-	<stdio.h>
-	"estruturas.h"
-	"veiculo.h"
-	"funcoes_auxiliares.h"
-
-1513513094 c:\users\sarita\documents\github\prog1\menuveiculo.h
-
-1513699099 c:\users\sarita\documents\github\prog1\menuveiculos.h
-
-1513763901 source:c:\users\sarita\documents\github\prog1\menuveiculos.c
-	<stdio.h>
-	<stdlib.h>
-	"veiculo.h"
-	"funcoes_auxiliares.h"
-	"menuVeiculos.h"
-
 1513707765 c:\users\rita\desktop\aserio\prog1\menuveiculos.h
 
-1513800869 source:c:\users\rita\desktop\aserio\prog1\menuveiculos.c
+1513805051 source:c:\users\rita\desktop\aserio\prog1\menuveiculos.c
 	<stdio.h>
 	<stdlib.h>
 	"veiculo.h"
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 
-1513625392 source:c:\users\rita\desktop\aserio\prog1\ficheiros.c
-	<stdlib.h>
+1513805098 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>
-	"ficheiros.h"
-
-1513622923 c:\users\rita\desktop\aserio\prog1\ficheiros.h
+	<stdlib.h>
+	<string.h>
 	"veiculo.h"
-	"encomendas.h"
+	"estruturas.h"
+	"constantes.h"
+	"funcoes_auxiliares.h"
 

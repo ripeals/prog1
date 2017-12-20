@@ -45,8 +45,10 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula
         }
     }
 }
-void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos, int posicao)
+
+void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos)
 {
+    int posicao = 0;
     char matricula[MAX_MATRICULA];
     if(*numVeiculos == MAX_VEICULOS)
     {
@@ -79,13 +81,13 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos)
         }
     }
 }
-void apresentaDadosVeiculos(tipoVeiculos veiculo)
+void apresentaDadosVeiculos(tipoVeiculos veiculos)
 {
-    printf("\n\tMatricula: %s",veiculo.matricula);
-    printf("\n\tData de Fabrico: %d/%d/%d",veiculo.dataFabrico.dia, veiculo.dataFabrico.mes, veiculo.dataFabrico.ano);
-    printf("\n\tCarga maxima: %.2f",veiculo.cargaMaxima);
+    printf("\n\tMatricula: %s",veiculos.matricula);
+    printf("\n\tData de Fabrico: %d/%d/%d",veiculos.dataFabrico.dia, veiculos.dataFabrico.mes, veiculos.dataFabrico.ano);
+    printf("\n\tCarga maxima: %.2f",veiculos.cargaMaxima);
     printf("\n\tEstado: ");
-    switch (veiculo.estado)
+    switch (veiculos.estado)
     {
     case DISPONIVEL:
         printf("disponivel");
