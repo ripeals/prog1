@@ -3,8 +3,9 @@
 #include "estruturas.h"
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
-int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_MATRICULA]);
-void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]);
+void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula[]);
+int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[]);
+void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[]);
 void listarVeiculos(tipoVeiculos veiculos[],int numVeiculos);
 void apresentaDadosVeiculos(tipoVeiculos veiculo);
 float cargaMediaVeiculos(tipoVeiculos veiculos[],int numVeiculos);

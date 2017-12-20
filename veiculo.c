@@ -19,15 +19,32 @@ int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_M
     }
     return posicao;
 }
-
+void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula[MAX_MATRICULA]){
+    int i;
+    for(i=0;i<numVeiculos;i++){
+        if(strcmp(matricula,veiculos[i].matricula) == 0){
+            printf("\n\tMatricula ja existe");
+            do{
+                 lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
+            }while(strcmp(matricula,veiculos[i].matricula)!= 0);
+        }
+        else{
+            strcpy(matricula,veiculos[i].matricula);
+        }
+    }
+    strcpy(matricula,veiculos[i].matricula);
+}
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos){
+    int posicao;
+    char matricula[MAX_MATRICULA];
     if(*numVeiculos == MAX_VEICULOS){
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
     }
     else{
         printf("\n\tData de Fabrico: ");
         veiculos[*numVeiculos].dataFabrico = lerData();
-        lerString("\n\tInsira a matricula(__-__-__): ",veiculos[*numVeiculos].matricula, MAX_MATRICULA);
+        lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
+        validaMatriculaUnica(veiculos,numVeiculos,matricula);
         veiculos[*numVeiculos].cargaMaxima = lerFloat("\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
         veiculos[*numVeiculos].estado = 1;
         (*numVeiculos)++;
@@ -109,31 +126,37 @@ float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
 
 void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encomendas[], int numEncomendas){
     float cargaAtual;
+    int i,j;
 
 
     if(numVeiculos == 0){
         printf("Nao existem veiculos. Por favor insira. ");
     }
     else{
-        if(veiculos[numVeiculos].estado == EM_CARGA){
-            if(encomendas[numEncomendas].estado == CARREGADA){
-                cargaAtual += encomendas[numEncomendas].peso;
-                veiculos[numVeiculos].cargaDisponivel = veiculos[numVeiculos].cargaMaxima - cargaAtual;
-                if((veiculos[numVeiculos].cargaDisponivel = veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso > veiculos[numVeiculos].cargaDisponivel){ //se estiver cheio a 80%
-                    printf("O veiculo ja esta pronto para partir");
-                    veiculos[numVeiculos].estado == A_TRANSPORTAR;
-                    encomendas[numEncomendas].estado == TRANSPORTADA;
+        for(i=0;i<numVeiculos;i++){
+            if(veiculos[i].estado == EM_CARGA){
+                    for(j=0;j<numEncomendas;j++){
+                         if(encomendas[j].estado == CARREGADA){
+                            cargaAtual += encomendas[j].peso;
+                            veiculos[i].cargaDisponivel = veiculos[i].cargaMaxima - cargaAtual;
+                            if((veiculos[i].cargaDisponivel == veiculos[i].cargaMaxima * 0.2) && encomendas[j].peso > veiculos[i].cargaDisponivel){ //se estiver cheio a 80%
+                                printf("O veiculo ja esta pronto para partir");
+                                veiculos[numVeiculos].estado = A_TRANSPORTAR;
+                                encomendas[numEncomendas].estado = TRANSPORTADA;
 
-                    }else{
-                        if((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso <= veiculos[numVeiculos].cargaDisponivel){
-                            do{
-                               printf("fff");
-                            }while ((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima));
-                            printf("O veiculo está pronto para partir -> veiculo a 100%%");
+                            }else{
+                                if((veiculos[numVeiculos].cargaDisponivel == veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso <= veiculos[numVeiculos].cargaDisponivel){
+                                    do{
+                                        printf("fff");
+                                    }while ((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima));
+                                    printf("O veiculo está pronto para partir -> veiculo a 100%%");
+                                }
+
+                            }
+                            }
                         }
-
-                    }
                 }
+
 
                                                                     //veiculo tem de estar cheio 80% (800kg) para ir sozinho;
                                                                     //pode ultrapassar esses 80% se couberem lá encomendas;
@@ -141,5 +164,5 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
             }
         }
 
-    }
+}
 

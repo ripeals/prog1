@@ -220,6 +220,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                                 encomendas[i].estado = CARREGADA;
                                 printf("\n%d",encomendas[i].estado);
                                 printf("Encomenda %d carregada",encomendas[i].numRegisto);
+                                inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                             }
                         }
                     }
