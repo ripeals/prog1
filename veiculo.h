@@ -8,4 +8,5 @@ void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[
 void listarVeiculos(tipoVeiculos veiculos[],int numVeiculos);
 void apresentaDadosVeiculos(tipoVeiculos veiculo);
 float cargaMediaVeiculos(tipoVeiculos veiculos[],int numVeiculos);
+void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encomendas[], int numEncomendas);
 #endif // VEICULO_H_INCLUDED

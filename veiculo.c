@@ -107,3 +107,39 @@ float cargaMediaVeiculos(tipoVeiculos veiculos[MAX_VEICULOS],int numVeiculos){
     return cargaMedia;
 }
 
+void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encomendas[], int numEncomendas){
+    float cargaAtual;
+
+
+    if(numVeiculos == 0){
+        printf("Nao existem veiculos. Por favor insira. ");
+    }
+    else{
+        if(veiculos[numVeiculos].estado == EM_CARGA){
+            if(encomendas[numEncomendas].estado == CARREGADA){
+                cargaAtual += encomendas[numEncomendas].peso;
+                veiculos[numVeiculos].cargaDisponivel = veiculos[numVeiculos].cargaMaxima - cargaAtual;
+                if((veiculos[numVeiculos].cargaDisponivel = veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso > veiculos[numVeiculos].cargaDisponivel){ //se estiver cheio a 80%
+                    printf("O veiculo ja esta pronto para partir");
+                    veiculos[numVeiculos].estado == A_TRANSPORTAR;
+                    encomendas[numEncomendas].estado == TRANSPORTADA;
+
+                    }else{
+                        if((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso <= veiculos[numVeiculos].cargaDisponivel){
+                            do{
+                               printf("fff");
+                            }while ((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima));
+                            printf("O veiculo está pronto para partir -> veiculo a 100%%");
+                        }
+
+                    }
+                }
+
+                                                                    //veiculo tem de estar cheio 80% (800kg) para ir sozinho;
+                                                                    //pode ultrapassar esses 80% se couberem lá encomendas;
+                                                                    //se não estiver carregado 80% manda-lo ir manualmente
+            }
+        }
+
+    }
+

@@ -40,6 +40,7 @@ int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
                 break;
         }
     }while(opcao!=4);
+    return opcao;
 }
 
 void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos,char matricula[MAX_MATRICULA]){

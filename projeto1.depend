@@ -68,7 +68,7 @@
 1513203583 c:\users\sara\documents\github\prog1\estruturas.h
 	"constantes.h"
 
-1513625779 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
+1513707768 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
@@ -77,37 +77,38 @@
 	"encomendas.h"
 	"veiculo.h"
 
-1513612937 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
+1513667623 source:c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.c
 	<stdio.h>
 	<ctype.h>
 	<string.h>
 	"funcoes_auxiliares.h"
 	"constantes.h"
 
-1513612168 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
+1513667623 c:\users\rita\desktop\aserio\prog1\funcoes_auxiliares.h
 	"constantes.h"
 	"estruturas.h"
 
-1513612168 c:\users\rita\desktop\aserio\prog1\constantes.h
+1513707877 c:\users\rita\desktop\aserio\prog1\constantes.h
 
-1513614846 c:\users\rita\desktop\aserio\prog1\estruturas.h
+1513707768 c:\users\rita\desktop\aserio\prog1\estruturas.h
 	"constantes.h"
 
-1513612168 source:c:\users\rita\desktop\aserio\prog1\main.c
+1513707765 source:c:\users\rita\desktop\aserio\prog1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 	"encomendas.h"
 
-1513532704 c:\users\rita\desktop\aserio\prog1\veiculo.h
+1513707855 c:\users\rita\desktop\aserio\prog1\veiculo.h
 	"estruturas.h"
 
-1513625392 c:\users\rita\desktop\aserio\prog1\encomendas.h
+1513701669 c:\users\rita\desktop\aserio\prog1\encomendas.h
 
-1513614846 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
+1513707856 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"veiculo.h"
 	"estruturas.h"
 	"constantes.h"
@@ -189,13 +190,14 @@
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 
-1513612168 c:\users\rita\desktop\aserio\prog1\menuveiculos.h
+1513707765 c:\users\rita\desktop\aserio\prog1\menuveiculos.h
 
-1513614087 source:c:\users\rita\desktop\aserio\prog1\menuveiculos.c
+1513709503 source:c:\users\rita\desktop\aserio\prog1\menuveiculos.c
 	<stdio.h>
 	<stdlib.h>
 	"veiculo.h"
 	"funcoes_auxiliares.h"
+	"menuVeiculos.h"
 
 1513625392 source:c:\users\rita\desktop\aserio\prog1\ficheiros.c
 	<stdlib.h>
