@@ -23,25 +23,23 @@ int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_M
     return posicao;
 }
 
-void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula[MAX_MATRICULA])
+void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
 {
     int i;
+
     for(i=0; i<numVeiculos; i++)
     {
-        if(strcmp(matricula,veiculos[i].matricula))
+        if(strcmp(veiculos[i].matricula,veiculos[i+1].matricula))
         {
+            printf("hallo");
 
             do
             {
                 printf("\n\tMatricula ja existe");
-                lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
+                lerString("\n\tInsira a matricula(__-__-__): ",veiculos[i].matricula, MAX_MATRICULA);
             }
-            while(strcmp(matricula,veiculos[i].matricula)==0);
+            while(strcmp(veiculos[i].matricula,veiculos[i+1].matricula)==0);
 
-        }
-        else
-        {
-            strcpy(matricula,veiculos[i].matricula);
         }
     }
 }
@@ -49,7 +47,6 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos)
 {
     int posicao = 0;
-    char matricula[MAX_MATRICULA];
     if(*numVeiculos == MAX_VEICULOS)
     {
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
@@ -58,8 +55,8 @@ void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos)
     {
         printf("\n\tData de Fabrico: ");
         veiculos[*numVeiculos].dataFabrico = lerData();
-        lerString("\n\tInsira a matricula(__-__-__): ",matricula, MAX_MATRICULA);
-        validaMatriculaUnica(veiculos, *numVeiculos,matricula);
+        lerString("\n\tInsira a matricula(__-__-__): ",veiculos[*numVeiculos].matricula, MAX_MATRICULA);
+        validaMatriculaUnica(veiculos, *numVeiculos);
         veiculos[*numVeiculos].cargaMaxima = lerFloat("\tCarga maxima: ",MIN_CARGA,MAX_CARGA);
         veiculos[*numVeiculos].estado = 1;
         (*numVeiculos)++;

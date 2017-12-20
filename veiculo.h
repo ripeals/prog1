@@ -3,7 +3,7 @@
 #include "estruturas.h"
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos);
-void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos,char matricula[]);
+void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos);
 int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[]);
 void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[]);
 void listarVeiculos(tipoVeiculos veiculos[],int numVeiculos);

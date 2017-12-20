@@ -55,3 +55,59 @@
 	"constantes.h"
 	"funcoes_auxiliares.h"
 
+1513806335 source:c:\users\sarita\documents\github\prog1\encomendas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"estruturas.h"
+	"constantes.h"
+	"encomendas.h"
+	"veiculo.h"
+
+1513646203 c:\users\sarita\documents\github\prog1\funcoes_auxiliares.h
+	"constantes.h"
+	"estruturas.h"
+
+1513763901 c:\users\sarita\documents\github\prog1\constantes.h
+
+1513701545 c:\users\sarita\documents\github\prog1\estruturas.h
+	"constantes.h"
+
+1513699360 c:\users\sarita\documents\github\prog1\encomendas.h
+
+1513807281 c:\users\sarita\documents\github\prog1\veiculo.h
+	"estruturas.h"
+
+1513679097 source:c:\users\sarita\documents\github\prog1\funcoes_auxiliares.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+	"constantes.h"
+
+1513699316 source:c:\users\sarita\documents\github\prog1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"menuVeiculos.h"
+	"encomendas.h"
+
+1513699099 c:\users\sarita\documents\github\prog1\menuveiculos.h
+
+1513806335 source:c:\users\sarita\documents\github\prog1\menuveiculos.c
+	<stdio.h>
+	<stdlib.h>
+	"veiculo.h"
+	"funcoes_auxiliares.h"
+	"menuVeiculos.h"
+
+1513807393 source:c:\users\sarita\documents\github\prog1\veiculo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"veiculo.h"
+	"estruturas.h"
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
