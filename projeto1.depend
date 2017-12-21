@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1513811300 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
+1513816799 source:c:\users\rita\desktop\aserio\prog1\encomendas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -18,7 +18,7 @@
 1513707768 c:\users\rita\desktop\aserio\prog1\estruturas.h
 	"constantes.h"
 
-1513811300 c:\users\rita\desktop\aserio\prog1\encomendas.h
+1513817288 c:\users\rita\desktop\aserio\prog1\encomendas.h
 
 1513814352 c:\users\rita\desktop\aserio\prog1\veiculo.h
 	"estruturas.h"
@@ -46,7 +46,7 @@
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 
-1513814364 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
+1513815155 source:c:\users\rita\desktop\aserio\prog1\veiculo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

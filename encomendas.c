@@ -10,6 +10,7 @@
 int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos veiculos[],int numVeiculos)
 {
     int opcao=0;
+    int posicao;
     do
     {
         printf("\n\t\t\t\tMenu das Encomendas");
@@ -50,7 +51,28 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
 return opcao;
 }
 
+/*void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)   //nao funciona, será por causa da posicao? diz sempre que já existe
+{
+    int i;
 
+    for(i=0; i<numEncomendas; i++)
+    {
+        if((encomendas[i].numRegisto==encomendas[numEncomendas].numRegisto))
+        {
+
+            do
+            {
+                printf("\n\tO numero de registo que inseriu ja existe");
+                lerInteiro("Numero de Registo ", 1, MAX_NUM_ENCOMENDA);
+            }
+            while((encomendas[i].numRegisto==encomendas[numEncomendas].numRegisto)==1);
+
+        }else{
+        (encomendas[i].numRegisto=encomendas[numEncomendas].numRegisto);
+        }
+    }
+}
+*/
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
 {
     int posicao = 0;
@@ -61,6 +83,7 @@ void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
     else
     {
         encomendas[*numEncomendas].numRegisto = lerInteiro("\n\n\tNumero de Registo ",1,MAX_NUM_ENCOMENDA);
+        validaNumRegistoUnico( encomendas, *numEncomendas);
         printf("\tData de Registo: ");
         encomendas[*numEncomendas].dataRegisto = lerData();
         encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);

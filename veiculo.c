@@ -31,7 +31,6 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
     {
         if(strcmp(veiculos[i].matricula,veiculos[numVeiculos].matricula)==0)
         {
-            printf("hallo");
 
             do
             {
