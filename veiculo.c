@@ -31,22 +31,18 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
     {
         if(strcmp(veiculos[i].matricula,veiculos[numVeiculos].matricula)==0)
         {
-
             do
             {
                 printf("\n\tMatricula ja existe");
                 lerString("\n\tInsira a matricula(__-__-__): ",veiculos[i].matricula, MAX_MATRICULA);
             }
             while(strcmp(veiculos[i].matricula,veiculos[numVeiculos].matricula)==0);
-
         }
-        strcpy(veiculos[i].matricula,veiculos[numVeiculos].matricula);
     }
 }
 
 void inserirVeiculo(tipoVeiculos veiculos[],int *numVeiculos)
 {
-    int posicao = 0;
     if(*numVeiculos == MAX_VEICULOS)
     {
         printf("\n\tERRO: Nao e possivel inserir um novo veiculo. Foi atingido o maximo de veiculos.");
@@ -75,6 +71,7 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos)
         for(i=0; i<numVeiculos; i++)
         {
             apresentaDadosVeiculos(veiculos[i]);
+            printf("%s",veiculos[i].matricula);
         }
     }
 }

@@ -10,7 +10,6 @@
 int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos veiculos[],int numVeiculos)
 {
     int opcao=0;
-    int posicao;
     do
     {
         printf("\n\t\t\t\tMenu das Encomendas");
@@ -51,31 +50,27 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
 return opcao;
 }
 
-/*void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)   //nao funciona, será por causa da posicao? diz sempre que já existe
+void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)
 {
     int i;
 
     for(i=0; i<numEncomendas; i++)
     {
-        if((encomendas[i].numRegisto==encomendas[numEncomendas].numRegisto))
+        if(encomendas[i].numRegisto == encomendas[numEncomendas].numRegisto)
         {
-
             do
             {
                 printf("\n\tO numero de registo que inseriu ja existe");
-                lerInteiro("Numero de Registo ", 1, MAX_NUM_ENCOMENDA);
+                encomendas[i].numRegisto = lerInteiro("\n\tNumero de Registo ", 1, MAX_NUM_ENCOMENDA);
             }
-            while((encomendas[i].numRegisto==encomendas[numEncomendas].numRegisto)==1);
+            while(encomendas[i].numRegisto == encomendas[numEncomendas].numRegisto);
 
-        }else{
-        (encomendas[i].numRegisto=encomendas[numEncomendas].numRegisto);
         }
     }
 }
-*/
+
 void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
 {
-    int posicao = 0;
     if(*numEncomendas == MAX_ENCOMENDAS)
     {
         printf("\n\tERRO: Nao e possivel inserir uma nova encomenda. Foi atingido o maximo das encomendas.");
@@ -83,7 +78,7 @@ void inserirEncomendas (tipoEncomendas encomendas[], int *numEncomendas)
     else
     {
         encomendas[*numEncomendas].numRegisto = lerInteiro("\n\n\tNumero de Registo ",1,MAX_NUM_ENCOMENDA);
-        validaNumRegistoUnico( encomendas, *numEncomendas);
+        validaNumRegistoUnico(encomendas, *numEncomendas);
         printf("\tData de Registo: ");
         encomendas[*numEncomendas].dataRegisto = lerData();
         encomendas[*numEncomendas].peso = lerFloat("\tPeso: ",1.00,MAX_PESO);
@@ -215,7 +210,13 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
     limpaBuffer();
     switch(opcao){
         case 1:
-
+            if(numEncomendas == 0){
+                printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+            }
+            else{
+                lerString("\n\t\tDestino: ",destino,MAX_STRING);
+                //if(strcmp(veiculos.destino,"")== 0){
+                }
             break;
         case 2:
             if(numEncomendas == 0){
@@ -232,6 +233,8 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                 }
                 else{
                     if(veiculos[posicao].estado == DISPONIVEL){
+                            strcpy(destino,veiculos[posicao].destino);
+                            printf("%s",veiculos[posicao].destino);
                         for(i=0;i<numEncomendas;i++){
                             if(encomendas[i].estado == REGISTADA){
                                 strcpy(encomendas[i].matricula,veiculos[posicao].matricula);

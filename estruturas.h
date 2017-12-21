@@ -26,6 +26,7 @@ typedef struct{
     int qtViagens;
     int qtEncomendasT;
     int numEncomendas;
+    char destino[MAX_STRING];
 }tipoVeiculos;
 
 #endif // ESTRUTURAS_H_INCLUDED
