@@ -71,10 +71,10 @@ void listarVeiculos(tipoVeiculos veiculos[], int numVeiculos)
         for(i=0; i<numVeiculos; i++)
         {
             apresentaDadosVeiculos(veiculos[i]);
-            printf("%s",veiculos[i].matricula);
         }
     }
 }
+
 void apresentaDadosVeiculos(tipoVeiculos veiculos)
 {
     printf("\n\tMatricula: %s",veiculos.matricula);
@@ -95,8 +95,11 @@ void apresentaDadosVeiculos(tipoVeiculos veiculos)
         printf("esta de volta");
     case AVARIADO:
         printf("esta avariado");
+
     }
+    printf("\n");
 }
+
 void consultarVeiculos(tipoVeiculos veiculos[], int numVeiculos, char matricula[MAX_MATRICULA]) //ainda nao funciona
 {
     int posicao;
