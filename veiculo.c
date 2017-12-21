@@ -29,7 +29,7 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
 
     for(i=0; i<numVeiculos; i++)
     {
-        if(strcmp(veiculos[i].matricula,veiculos[i+1].matricula))
+        if(strcmp(veiculos[i].matricula,veiculos[numVeiculos].matricula)==0)
         {
             printf("hallo");
 
@@ -38,9 +38,10 @@ void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
                 printf("\n\tMatricula ja existe");
                 lerString("\n\tInsira a matricula(__-__-__): ",veiculos[i].matricula, MAX_MATRICULA);
             }
-            while(strcmp(veiculos[i].matricula,veiculos[i+1].matricula)==0);
+            while(strcmp(veiculos[i].matricula,veiculos[numVeiculos].matricula)==0);
 
         }
+        strcpy(veiculos[i].matricula,veiculos[numVeiculos].matricula);
     }
 }
 
