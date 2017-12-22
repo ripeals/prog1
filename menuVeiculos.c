@@ -6,7 +6,6 @@
 
 int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
     int opcao;
-    int posicao;
     char matricula[MAX_MATRICULA];
     numVeiculos=0;
     opcao=0;

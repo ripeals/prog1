@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 #include "funcoes_auxiliares.h"
 #include "estruturas.h"
@@ -199,10 +199,13 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     return numEncomendas;
 }
 void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos){
-    int opcao,posicao,i;
+    int opcao,posicao,i,j;
     char destino[MAX_STRING],matricula[MAX_MATRICULA];
 
     opcao=0;
+    strcpy(veiculos[numVeiculos].destino,"");
+    veiculos[numVeiculos].qtEncomendasT=0;
+    veiculos[numVeiculos].qtViagens=0;
 
     printf("\n\t\t1 - Selecao Automatica");
     printf("\n\t\t2 - Selecao Manual");
@@ -215,8 +218,53 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
             }
             else{
                 lerString("\n\t\tDestino: ",destino,MAX_STRING);
-                //if(strcmp(veiculos.destino,"")== 0){
+                for(i=0;i<numVeiculos;i++){
+                    if(veiculos[i].estado == DISPONIVEL){
+                        if(strcmp(veiculos[i].destino,"")== 0){
+                            strcpy(veiculos[i].destino,destino);
+                            strcpy(matricula,veiculos[i].matricula);
+                            for(j=0;j<numEncomendas;j++){
+                                if(encomendas[j].estado == REGISTADA){
+                                    strcpy(encomendas[j].matricula,matricula);
+                                    printf("\n%s %s",encomendas[j].matricula,matricula);
+                                    veiculos[i].estado = EM_CARGA;
+                                    printf("\n%d",veiculos[i].estado);
+                                    encomendas[j].estado = CARREGADA;
+                                    printf("\n%d",encomendas[j].estado);
+                                    printf("Encomenda %d carregada",encomendas[j].numRegisto);
+                                    veiculos[i].qtEncomendasT++;
+                                    inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
+                                }
+                            }
+                        }
+                        else{
+                            for(i=0;i<numVeiculos;i++){
+                                if(strcmp(destino,veiculos[i].destino) == 0){
+                                    strcpy(matricula,veiculos[i].matricula);
+                                    for(j=0;j<numEncomendas;j++){
+                                        if(encomendas[j].estado == REGISTADA){
+                                            strcpy(encomendas[j].matricula,matricula);
+                                            printf("\n%s %s",encomendas[j].matricula,matricula);
+                                            veiculos[i].estado = EM_CARGA;
+                                            printf("\n%d",veiculos[i].estado);
+                                            encomendas[j].estado = CARREGADA;
+                                            printf("\n%d",encomendas[j].estado);
+                                            printf("Encomenda %d carregada",encomendas[j].numRegisto);
+                                            veiculos[i].qtEncomendasT++;
+                                            inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }else{
+                        printf("\n\t\tEste veiculo nao se encontra disponivel");
+                    }
                 }
+
+
+            }
             break;
         case 2:
             if(numEncomendas == 0){
@@ -233,7 +281,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                 }
                 else{
                     if(veiculos[posicao].estado == DISPONIVEL){
-                            strcpy(destino,veiculos[posicao].destino);
+                            strcpy(veiculos[posicao].destino, destino);
                             printf("%s",veiculos[posicao].destino);
                         for(i=0;i<numEncomendas;i++){
                             if(encomendas[i].estado == REGISTADA){
@@ -280,7 +328,5 @@ float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
         }
         pesoMedio=soma/numEncomendas;
     }
-
     return pesoMedio;
-
 }
