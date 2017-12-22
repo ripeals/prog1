@@ -25,6 +25,7 @@ int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_M
 
 void validaMatriculaUnica(tipoVeiculos veiculos[],int numVeiculos)
 {
+
     int i;
 
     for(i=0; i<numVeiculos; i++)
