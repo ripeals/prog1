@@ -208,3 +208,28 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
 
 }
 
+void listarVeiculosDecrescenteEncomendas(tipoVeiculos veiculos[], int numVeiculos)
+{
+    int i, j, auxiliar;
+    if(numVeiculos == 0)
+    {
+        printf("\n\tNao existem veiculos");
+    }
+    else
+    {
+        for(i=0; i<numVeiculos; i++)
+        {
+            for(j=i+1; j<veiculos[numVeiculos].qtEncomendasT+1; j++)
+            {
+                if(veiculos[j].qtEncomendasT > veiculos[i])
+                {
+                    auxiliar=veiculos[j];
+                    veiculos[j]=veiculos[i];
+                    veiculos[i]=auxiliar;
+                    apresentaDadosVeiculos(veiculos[i]);
+                }
+            }
+        }
+    }
+}
+

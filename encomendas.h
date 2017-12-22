@@ -11,5 +11,5 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas);
 void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos);
 float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas);
 void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas);
-int quantidadeEncomendasEntregues(tipoEncomendas encomendas, int *numEncomendas);
+int quantidadeEncomendasEntregues(tipoEncomendas encomendas[], int *numEncomendas);
 #endif // ENCOMENDAS_H_INCLUDED

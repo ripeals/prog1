@@ -359,7 +359,7 @@ float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
 }
 
 
-int quantidadeEncomendasEntregues(tipoEncomendas encomendas, int *numEncomendas) //nao deve estar a funcionar, nao sei
+int quantidadeEncomendasEntregues(tipoEncomendas encomendas[], int *numEncomendas) //nao deve estar a funcionar, nao sei
 {
 
     int  i, qtEncomendasE = 0;
@@ -372,8 +372,8 @@ int quantidadeEncomendasEntregues(tipoEncomendas encomendas, int *numEncomendas)
     else
     {
         printf("\n\tData de Entrega: ");
-        encomendas.dataEntrega = lerData();
-        if((encomendas.estado==ENTREGUE)==0)
+        encomendas[*numEncomendas].dataEntrega = lerData();
+        if((encomendas[*numEncomendas].estado==ENTREGUE)==0)
         {
             for(i=0; i<*numEncomendas; i++)
             {
