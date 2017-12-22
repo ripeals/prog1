@@ -330,3 +330,6 @@ float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
     }
     return pesoMedio;
 }
+
+
+
