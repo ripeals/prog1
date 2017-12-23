@@ -71,7 +71,7 @@
 
 1514031531 c:\users\sarita\documents\github\prog1\constantes.h
 
-1513880258 c:\users\sarita\documents\github\prog1\estruturas.h
+1514034081 c:\users\sarita\documents\github\prog1\estruturas.h
 	"constantes.h"
 
 1514020870 c:\users\sarita\documents\github\prog1\encomendas.h
@@ -102,7 +102,7 @@
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 
-1514031184 source:c:\users\sarita\documents\github\prog1\veiculo.c
+1514033004 source:c:\users\sarita\documents\github\prog1\veiculo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -110,6 +110,7 @@
 	"estruturas.h"
 	"constantes.h"
 	"funcoes_auxiliares.h"
+	"encomendas.h"
 
 1513904348 source:c:\users\rita\desktop\aserio\prog1\ficheiros.c
 	<stdlib.h>

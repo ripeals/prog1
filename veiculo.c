@@ -193,7 +193,7 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
                             else
                             {
                                 printf("Quer forcar o inicio da viagem?(S/N)");
-                                scanf("%c",opcao);
+                                scanf("%c",&opcao);
                                 if(opcao == 's'){
                                     veiculos[i].estado = A_TRANSPORTAR;
                                     encomendas[j].estado = TRANSPORTADA;
