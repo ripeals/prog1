@@ -160,6 +160,7 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
     int i,j;
     char opcao;
 
+    veiculos[numVeiculos].cargaDisponivel=0;
 
     if(numVeiculos == 0)
     {
@@ -176,10 +177,12 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
                     if(encomendas[j].estado == CARREGADA)
                     {
                         cargaAtual += encomendas[j].peso;
-                        if(veiculos[i].cargaMaxima >= (veiculos[i].cargaMaxima-cargaAtual)){
                             veiculos[i].cargaDisponivel = veiculos[i].cargaMaxima - cargaAtual;
+                            printf("%.2f",veiculos[i].cargaDisponivel);
                             if(veiculos[i].cargaDisponivel <= veiculos[i].cargaMaxima * 0.2) {
+                                printf("\nentrou no primeiro");
                                 if(encomendas[j].peso<=veiculos[i].cargaDisponivel){
+                                    printf("\nentrou no segundo");
                                     carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
                                     veiculos[i].estado = A_TRANSPORTAR;
                                     encomendas[j].estado = TRANSPORTADA;
@@ -204,20 +207,10 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
                             }
 
                         }
-                        else{
-                            printf("\n\tA encomenda excede a carga do veiculo");
-                        }
-
                     }
                 }
             }
-
-
-            //veiculo tem de estar cheio 80% (800kg) para ir sozinho;
-            //pode ultrapassar esses 80% se couberem lá encomendas;
-            //se não estiver carregado 80% manda-lo ir manualmente
         }
-    }
 
 }
 

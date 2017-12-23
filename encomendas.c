@@ -44,11 +44,11 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
             carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
             break;
         case 6:
-            printf("\n\t\t Sair");
             break;
         }
     }
     while(opcao != 6);
+    return numEncomendas;
 }
 
 void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)
@@ -218,80 +218,67 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
     {
         switch(opcao)
         {
-        case 1:
-            if(numEncomendas == 0)
-            {
-                printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
-            }
-            else
-            {
-                lerString("\n\t\tDestino: ",destino,MAX_STRING);
-                if(veiculos[MAX_VEICULOS].estado == DISPONIVEL)
-                {
-                    for(i=0; i<numVeiculos; i++)
-                    {
+            case 1:
 
-                        printf("entrou\n");
-                        printf("%s",veiculos[i].destino);
-                        if(strcmp(veiculos[i].destino,"") == 0)
-                        {
-                            printf("entrou2");
-                            strcpy(veiculos[i].destino,destino);
-                            strcpy(matricula,veiculos[i].matricula);
-                            for(j=0; j<numEncomendas; j++)
+                if(numEncomendas == 0)
+                {
+                    printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+                }
+                else
+                {
+                    lerString("\n\t\tDestino: ",destino,MAX_STRING);
+                    for(i=0;i<numEncomendas;i++){
+                        if(encomendas[i].estado == REGISTADA && strcmp(destino,encomendas[i].destino)==0){
+                            for(j=0; j<numVeiculos; j++)
                             {
-                                printf("entrou");
-                                if(encomendas[j].estado == REGISTADA)
+                                if(veiculos[j].estado == DISPONIVEL)
                                 {
-                                    printf("entrou");
-                                    strcpy(encomendas[j].matricula,matricula);
-                                    printf("\n%s %s",encomendas[j].matricula,matricula);
-                                    veiculos[i].estado = EM_CARGA;
-                                    printf("\n%d",veiculos[i].estado);
-                                    encomendas[j].estado = CARREGADA;
-                                    printf("\n%d",encomendas[j].estado);
-                                    printf("Encomenda %d carregada",encomendas[j].numRegisto);
-                                    veiculos[i].qtEncomendasT++;
-                                    inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            printf("entrouelse");
-                            for(i=0; i<numVeiculos; i++)
-                            {
-                                if(strcmp(destino,veiculos[i].destino) == 0)
-                                {
-                                    strcpy(matricula,veiculos[i].matricula);
-                                    for(j=0; j<numEncomendas; j++)
-                                    {
-                                        if(encomendas[j].estado == REGISTADA)
-                                        {
-                                            strcpy(encomendas[j].matricula,matricula);
-                                            printf("\n%s %s",encomendas[j].matricula,matricula);
-                                            veiculos[i].estado = EM_CARGA;
-                                            printf("\n%d",veiculos[i].estado);
-                                            encomendas[j].estado = CARREGADA;
-                                            printf("\n%d",encomendas[j].estado);
-                                            printf("Encomenda %d carregada",encomendas[j].numRegisto);
-                                            veiculos[i].qtEncomendasT++;
+                                    strcpy(veiculos[j].destino,destino);
+                                    printf("%s",veiculos[j].destino);
+                                    if(strcmp(destino,veiculos[j].destino)==0){
+                                            strcpy(matricula,veiculos[j].matricula);
+                                            strcpy(encomendas[i].matricula,matricula);
+                                            printf("\n%s %s",encomendas[i].matricula,matricula);
+                                            veiculos[j].estado = EM_CARGA;
+                                            printf("\n%d",veiculos[j].estado);
+                                            encomendas[i].estado = CARREGADA;
+                                            printf("\n%d",encomendas[i].estado);
+                                            printf("Encomenda %d carregada",encomendas[i].numRegisto);
+                                            veiculos[j].qtEncomendasT++;
+                                            inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
+                                    }
+                                    else{
+                                        if(strcmp(veiculos[j].destino,"") == 0){
+                                            strcpy(veiculos[j].destino,destino);
+                                            strcpy(matricula,veiculos[j].matricula);
+                                            strcpy(encomendas[i].matricula,matricula);
+                                            printf("\n%s %s",encomendas[i].matricula,matricula);
+                                            veiculos[j].estado = EM_CARGA;
+                                            printf("\n%d",veiculos[j].estado);
+                                            encomendas[i].estado = CARREGADA;
+                                            printf("\n%d",encomendas[i].estado);
+                                            printf("Encomenda %d carregada",encomendas[i].numRegisto);
+                                            veiculos[j].qtEncomendasT++;
                                             inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                                         }
+                                        else{
+                                            printf("\n\t\tNao ha nenhum veiculo com esse destino");
+                                        }
                                     }
+
+                                }
+                                else{
+                                    printf("\n\t\tNao ha veiculos disponiveis");
                                 }
                             }
-
+                        }
+                        else{
+                            printf("\n\t\tNao ha encomendas com este destino");
                         }
                     }
+                }
 
-                } else
-                    {
-                        printf("\n\t\tEste veiculo nao se encontra disponivel");
-                    }
-
-            }
-            break;
+                break;
         case 2:
             if(numEncomendas == 0)
             {
@@ -320,7 +307,6 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                             {
                                 strcpy(encomendas[i].matricula,veiculos[posicao].matricula);
                                 printf("\n%s %s",encomendas[i].matricula,veiculos[posicao].matricula);
-                                printf("\n%d",numEncomendas);
                                 veiculos[posicao].estado = EM_CARGA;
                                 printf("\n%d",veiculos[posicao].estado);
                                 encomendas[i].estado = CARREGADA;
@@ -338,10 +324,9 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                 }
             }
             break;
-
         }
-    }
-    while(opcao!=2);
+
+    }while(opcao!=2);
 
 }
 

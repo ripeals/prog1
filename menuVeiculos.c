@@ -31,11 +31,10 @@ int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:
-                printf("\n\tA sair");
                 break;
         }
     }while(opcao!=4);
-    return opcao;
+    return numVeiculos;
 }
 
 void menuConsultas(tipoVeiculos veiculos[MAX_VEICULOS], int numVeiculos,char matricula[MAX_MATRICULA]){
