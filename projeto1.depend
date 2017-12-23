@@ -55,9 +55,9 @@
 	"constantes.h"
 	"funcoes_auxiliares.h"
 
-1513865550 source:c:\users\sarita\documents\github\prog1\encomendas.c
+1513928660 source:c:\users\sarita\documents\github\prog1\encomendas.c
 	<stdio.h>
-	<stdlib.h>
+	<ctype.h>
 	<string.h>
 	"funcoes_auxiliares.h"
 	"estruturas.h"
@@ -102,7 +102,7 @@
 	"funcoes_auxiliares.h"
 	"menuVeiculos.h"
 
-1513880258 source:c:\users\sarita\documents\github\prog1\veiculo.c
+1513928660 source:c:\users\sarita\documents\github\prog1\veiculo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

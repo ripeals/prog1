@@ -43,11 +43,8 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
             printf("\n\t\t\tCarregamento de Encomendas");
             carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
             break;
-        default:
-            printf("Por favor, introduza uma opcao valida.");
         }
-    }while(opcao != 6);
-return opcao;
+    }while(opcao != 5);
 }
 
 void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)
@@ -217,6 +214,10 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                 printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
             }
             else{
+                if(numVeiculos == 0){
+                    printf("\n\t\tERRO: Nao existem veiculos. Por favor insira ");
+                }
+                else{
                 lerString("\n\t\tDestino: ",destino,MAX_STRING);
                 for(i=0;i<numVeiculos;i++){
                     if(veiculos[i].estado == DISPONIVEL){
@@ -261,6 +262,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                     }else{
                         printf("\n\t\tEste veiculo nao se encontra disponivel");
                     }
+                }
                 }
 
 

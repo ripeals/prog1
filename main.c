@@ -27,10 +27,7 @@ int main()
             case 2:
                 numEncomendas = menuEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
                 break;
-            default:
-                printf("Introduza uma opcao valida.");
-                break;
         }
-    }while(opcao!=3);
+    }while(opcao!=2);
     return 0;
 }
