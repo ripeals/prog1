@@ -43,8 +43,19 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
             printf("\n\t\t\tCarregamento de Encomendas");
             carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
             break;
+<<<<<<< HEAD
         }
     }while(opcao != 5);
+=======
+        case 6:
+            break;
+        default:
+            printf("Por favor, introduza uma opcao valida.");
+        }
+    }
+    while(opcao != 6);
+    return opcao;
+>>>>>>> 1b995ee4b21e4ea8e9bf48f8c8f7cc86e587e4a1
 }
 
 void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)
@@ -109,16 +120,16 @@ void apresentaDadosEncomendas(tipoEncomendas encomenda)
     printf("\n\tEstado: ");
     switch (encomenda.estado)
     {
-        case REGISTADA:
-            printf("registada");
-            break;
-        case CARREGADA:
-            printf("carregada");
-            break;
-        case ENTREGUE:
-            printf("entregue");
-        case DEVOLVIDA:
-            printf("devolvida");
+    case REGISTADA:
+        printf("registada");
+        break;
+    case CARREGADA:
+        printf("carregada");
+        break;
+    case ENTREGUE:
+        printf("entregue");
+    case DEVOLVIDA:
+        printf("devolvida");
     }
     printf("\n\tDestino: %s", encomenda.destino);
     printf("\tObservacoes: %s",encomenda.obs);
@@ -195,7 +206,8 @@ int eliminarEncomendas (tipoEncomendas encomendas [], int numEncomendas)
     }
     return numEncomendas;
 }
-void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos){
+void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoVeiculos veiculos[],int numVeiculos)
+{
     int opcao,posicao,i,j;
     char destino[MAX_STRING],matricula[MAX_MATRICULA];
 
@@ -208,6 +220,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
     printf("\n\t\t2 - Selecao Manual");
     scanf("%d",&opcao);
     limpaBuffer();
+<<<<<<< HEAD
     switch(opcao){
         case 1:
             if(numEncomendas == 0){
@@ -236,76 +249,128 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                                     veiculos[i].qtEncomendasT++;
                                     inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                                 }
+=======
+    switch(opcao)
+    {
+    case 1:
+        if(numEncomendas == 0)
+        {
+            printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+        }
+        else
+        {
+            lerString("\n\t\tDestino: ",destino,MAX_STRING);
+            for(i=0; i<numVeiculos; i++)
+            {
+                if(veiculos[i].estado == DISPONIVEL)
+                {
+                    if(strcmp(veiculos[i].destino,"")== 0)
+                    {
+                        strcpy(veiculos[i].destino,destino);
+                        strcpy(matricula,veiculos[i].matricula);
+                        for(j=0; j<numEncomendas; j++)
+                        {
+                            if(encomendas[j].estado == REGISTADA)
+                            {
+                                strcpy(encomendas[j].matricula,matricula);
+                                printf("\n%s %s",encomendas[j].matricula,matricula);
+                                veiculos[i].estado = EM_CARGA;
+                                printf("\n%d",veiculos[i].estado);
+                                encomendas[j].estado = CARREGADA;
+                                printf("\n%d",encomendas[j].estado);
+                                printf("Encomenda %d carregada",encomendas[j].numRegisto);
+                                veiculos[i].qtEncomendasT++;
+                                inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
+>>>>>>> 1b995ee4b21e4ea8e9bf48f8c8f7cc86e587e4a1
                             }
                         }
-                        else{
-                            for(i=0;i<numVeiculos;i++){
-                                if(strcmp(destino,veiculos[i].destino) == 0){
-                                    strcpy(matricula,veiculos[i].matricula);
-                                    for(j=0;j<numEncomendas;j++){
-                                        if(encomendas[j].estado == REGISTADA){
-                                            strcpy(encomendas[j].matricula,matricula);
-                                            printf("\n%s %s",encomendas[j].matricula,matricula);
-                                            veiculos[i].estado = EM_CARGA;
-                                            printf("\n%d",veiculos[i].estado);
-                                            encomendas[j].estado = CARREGADA;
-                                            printf("\n%d",encomendas[j].estado);
-                                            printf("Encomenda %d carregada",encomendas[j].numRegisto);
-                                            veiculos[i].qtEncomendasT++;
-                                            inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
-                                        }
+                    }
+                    else
+                    {
+                        for(i=0; i<numVeiculos; i++)
+                        {
+                            if(strcmp(destino,veiculos[i].destino) == 0)
+                            {
+                                strcpy(matricula,veiculos[i].matricula);
+                                for(j=0; j<numEncomendas; j++)
+                                {
+                                    if(encomendas[j].estado == REGISTADA)
+                                    {
+                                        strcpy(encomendas[j].matricula,matricula);
+                                        printf("\n%s %s",encomendas[j].matricula,matricula);
+                                        veiculos[i].estado = EM_CARGA;
+                                        printf("\n%d",veiculos[i].estado);
+                                        encomendas[j].estado = CARREGADA;
+                                        printf("\n%d",encomendas[j].estado);
+                                        printf("Encomenda %d carregada",encomendas[j].numRegisto);
+                                        veiculos[i].qtEncomendasT++;
+                                        inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                                     }
                                 }
                             }
-
                         }
-                    }else{
-                        printf("\n\t\tEste veiculo nao se encontra disponivel");
+
                     }
                 }
+<<<<<<< HEAD
                 }
+=======
+                else
+                {
+                    printf("\n\t\tEste veiculo nao se encontra disponivel");
+                }
+            }
+>>>>>>> 1b995ee4b21e4ea8e9bf48f8c8f7cc86e587e4a1
 
 
+        }
+        break;
+    case 2:
+        if(numEncomendas == 0)
+        {
+            printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
+        }
+        else
+        {
+            lerString("\n\t\tDestino: ",destino,MAX_STRING);
+            lerString("\n\tInsira a matricula(__-__-__): ", matricula, MAX_MATRICULA);
+            printf("%s",matricula);
+            posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
+            printf("%d",posicao);
+            if(posicao == NAO_EXISTE)
+            {
+                printf("\n\t\tNao existe nenhum veiculo com a matricula que introduziu.");
             }
-            break;
-        case 2:
-            if(numEncomendas == 0){
-                printf("\n\t\tERRO: Nao existem encomendas. Por favor insira ");
-            }
-            else{
-                lerString("\n\t\tDestino: ",destino,MAX_STRING);
-                lerString("\n\tInsira a matricula(__-__-__): ", matricula, MAX_MATRICULA);
-                printf("%s",matricula);
-                posicao = procuraVeiculo(veiculos,numVeiculos,matricula);
-                printf("%d",posicao);
-                if(posicao == NAO_EXISTE){
-                    printf("\n\t\tNao existe nenhum veiculo com a matricula que introduziu.");
-                }
-                else{
-                    if(veiculos[posicao].estado == DISPONIVEL){
-                            strcpy(veiculos[posicao].destino, destino);
-                            printf("%s",veiculos[posicao].destino);
-                        for(i=0;i<numEncomendas;i++){
-                            if(encomendas[i].estado == REGISTADA){
-                                strcpy(encomendas[i].matricula,veiculos[posicao].matricula);
-                                printf("\n%s %s",encomendas[i].matricula,veiculos[posicao].matricula);
-                                veiculos[posicao].numEncomendas++;
-                                printf("\n%d",numEncomendas);
-                                veiculos[posicao].estado = EM_CARGA;
-                                printf("\n%d",veiculos[posicao].estado);
-                                encomendas[i].estado = CARREGADA;
-                                printf("\n%d",encomendas[i].estado);
-                                printf("Encomenda %d carregada",encomendas[i].numRegisto);
-                                inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
-                            }
+            else
+            {
+                if(veiculos[posicao].estado == DISPONIVEL)
+                {
+                    strcpy(veiculos[posicao].destino, destino);
+                    printf("%s",veiculos[posicao].destino);
+                    for(i=0; i<numEncomendas; i++)
+                    {
+                        if(encomendas[i].estado == REGISTADA)
+                        {
+                            strcpy(encomendas[i].matricula,veiculos[posicao].matricula);
+                            printf("\n%s %s",encomendas[i].matricula,veiculos[posicao].matricula);
+                            veiculos[posicao].numEncomendas++;
+                            printf("\n%d",numEncomendas);
+                            veiculos[posicao].estado = EM_CARGA;
+                            printf("\n%d",veiculos[posicao].estado);
+                            encomendas[i].estado = CARREGADA;
+                            printf("\n%d",encomendas[i].estado);
+                            printf("Encomenda %d carregada",encomendas[i].numRegisto);
+                            inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                         }
                     }
-                    else{
-                        printf("\n\t\tEste veiculo nao se encontra disponivel");
-                    }
+                }
+                else
+                {
+                    printf("\n\t\tEste veiculo nao se encontra disponivel");
                 }
             }
-            break;
+        }
+        break;
 
     }
 }
@@ -334,4 +399,34 @@ float pesoMedioEncomendas(tipoEncomendas encomendas[], int numEncomendas)
 }
 
 
+int quantidadeEncomendasEntregues(tipoEncomendas encomendas[], int *numEncomendas) //nao deve estar a funcionar, nao sei
+{
 
+    int  i, qtEncomendasE = 0;
+
+    printf("\n\t\t\tNumero de Encomendas Entregues numa Determinada Data");
+    if(numEncomendas==0)
+    {
+        printf("\nERRO: Nao existem encomendas. Por favor, insira!");
+    }
+    else
+    {
+        printf("\n\tData de Entrega: ");
+        encomendas[*numEncomendas].dataEntrega = lerData();
+        if((encomendas[*numEncomendas].estado==ENTREGUE)==0)
+        {
+            for(i=0; i<*numEncomendas; i++)
+            {
+
+                *numEncomendas=qtEncomendasE;
+                printf("\n  O numero de encomendas entregues na data que inseriu: %d",qtEncomendasE);
+
+            }
+        }else{
+        printf("\nAs encomendas que inseriu nao se encontram como entregues");
+
+        }
+    }
+    return qtEncomendasE;
+
+}
