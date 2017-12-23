@@ -43,9 +43,11 @@ int menuEncomendas(tipoEncomendas encomendas[],int numEncomendas,tipoVeiculos ve
             printf("\n\t\t\tCarregamento de Encomendas");
             carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
             break;
-
+        case 6:
+            printf("\n\t\t Sair");
+            break;
         }
-    }while(opcao != 5);
+    }while(opcao != 6);
 }
 
 void validaNumRegistoUnico(tipoEncomendas encomendas[],int numEncomendas)
@@ -224,6 +226,7 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                 {
                     if(veiculos[i].estado == DISPONIVEL)
                     {
+                        printf("entrou");
                         if(strcmp(veiculos[i].destino,"")== 0)
                         {
                             strcpy(veiculos[i].destino,destino);
@@ -307,12 +310,12 @@ void carregamentoEncomendas(tipoEncomendas encomendas[], int numEncomendas,tipoV
                             {
                                 strcpy(encomendas[i].matricula,veiculos[posicao].matricula);
                                 printf("\n%s %s",encomendas[i].matricula,veiculos[posicao].matricula);
-                                veiculos[posicao].numEncomendas++;
                                 printf("\n%d",numEncomendas);
                                 veiculos[posicao].estado = EM_CARGA;
                                 printf("\n%d",veiculos[posicao].estado);
                                 encomendas[i].estado = CARREGADA;
                                 printf("\n%d",encomendas[i].estado);
+                                veiculos[posicao].qtEncomendasT++;
                                 printf("Encomenda %d carregada",encomendas[i].numRegisto);
                                 inicioViagem(veiculos,numVeiculos,encomendas,numEncomendas);
                             }

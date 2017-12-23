@@ -28,6 +28,6 @@ int main()
                 numEncomendas = menuEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
                 break;
         }
-    }while(opcao!=2);
+    }while(opcao!=3);
     return 0;
 }

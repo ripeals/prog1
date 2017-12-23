@@ -7,7 +7,6 @@
 int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
     int opcao;
     char matricula[MAX_MATRICULA];
-    numVeiculos=0;
     opcao=0;
     do{
         printf("\n\t\t\t\tMenu dos Veiculos");
@@ -32,10 +31,7 @@ int menuVeiculo(tipoVeiculos veiculos[],int numVeiculos){
                 listarVeiculos(veiculos, numVeiculos);
                 break;
             case 4:
-
-                break;
-            default:
-                printf("\tIntroduza uma opcao valida\n\n");
+                printf("\n\tA sair");
                 break;
         }
     }while(opcao!=4);

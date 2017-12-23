@@ -12,7 +12,7 @@
 #define MAX_CARGA 1000
 #define MIN_CARGA 1
 #define MAX_NUM_ENCOMENDA 9999
-#define MAX_PESO 50
+#define MAX_PESO 100
 
 
 //Estado do Veiculo

@@ -5,6 +5,7 @@
 #include "estruturas.h"
 #include "constantes.h"
 #include "funcoes_auxiliares.h"
+#include "encomendas.h"
 
 
 int procuraVeiculo(tipoVeiculos veiculos[],int numVeiculos, char matricula[MAX_MATRICULA])
@@ -157,6 +158,7 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
 {
     float cargaAtual;
     int i,j;
+    char opcao;
 
 
     if(numVeiculos == 0)
@@ -174,27 +176,38 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
                     if(encomendas[j].estado == CARREGADA)
                     {
                         cargaAtual += encomendas[j].peso;
-                        veiculos[i].cargaDisponivel = veiculos[i].cargaMaxima - cargaAtual;
-                        if((veiculos[i].cargaDisponivel == veiculos[i].cargaMaxima * 0.2) && encomendas[j].peso > veiculos[i].cargaDisponivel)  //se estiver cheio a 80%
-                        {
-                            printf("O veiculo ja esta pronto para partir");
-                            veiculos[numVeiculos].estado = A_TRANSPORTAR;
-                            encomendas[numEncomendas].estado = TRANSPORTADA;
-
-                        }
-                        else
-                        {
-                            if((veiculos[numVeiculos].cargaDisponivel == veiculos[numVeiculos].cargaMaxima * 0.2)&& encomendas[numEncomendas].peso <= veiculos[numVeiculos].cargaDisponivel)
-                            {
-                                do
-                                {
-                                    printf("fff");
+                        if(veiculos[i].cargaMaxima >= (veiculos[i].cargaMaxima-cargaAtual)){
+                            veiculos[i].cargaDisponivel = veiculos[i].cargaMaxima - cargaAtual;
+                            if(veiculos[i].cargaDisponivel <= veiculos[i].cargaMaxima * 0.2) {
+                                if(encomendas[j].peso<=veiculos[i].cargaDisponivel){
+                                    carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
+                                    veiculos[i].estado = A_TRANSPORTAR;
+                                    encomendas[j].estado = TRANSPORTADA;
                                 }
-                                while ((veiculos[numVeiculos].cargaDisponivel=veiculos[numVeiculos].cargaMaxima));
-                                printf("O veiculo está pronto para partir -> veiculo a 100%%");
+                                else{
+                                    printf("O veiculo ja esta pronto para partir");
+                                    veiculos[i].estado = A_TRANSPORTAR;
+                                    encomendas[j].estado = TRANSPORTADA;
+                                }
+                            }
+                            else
+                            {
+                                printf("Quer forcar o inicio da viagem?(S/N)");
+                                scanf("%c",opcao);
+                                if(opcao == 's'){
+                                    veiculos[i].estado = A_TRANSPORTAR;
+                                    encomendas[j].estado = TRANSPORTADA;
+                                }
+                                else{
+                                    carregamentoEncomendas(encomendas,numEncomendas,veiculos,numVeiculos);
+                                }
                             }
 
                         }
+                        else{
+                            printf("\n\tA encomenda excede a carga do veiculo");
+                        }
+
                     }
                 }
             }
@@ -208,7 +221,7 @@ void inicioViagem(tipoVeiculos veiculos[], int numVeiculos, tipoEncomendas encom
 
 }
 
-void listarVeiculosDecrescenteEncomendas(tipoVeiculos veiculos[], int numVeiculos)
+/*void listarVeiculosDecrescenteEncomendas(tipoVeiculos veiculos[], int numVeiculos)
 {
     int i, j, auxiliar;
     if(numVeiculos == 0)
@@ -221,7 +234,7 @@ void listarVeiculosDecrescenteEncomendas(tipoVeiculos veiculos[], int numVeiculo
         {
             for(j=i+1; j<veiculos[numVeiculos].qtEncomendasT+1; j++)
             {
-                if(veiculos[j].qtEncomendasT > veiculos[i])
+                if(veiculos[j].qtEncomendasT > veiculos[i].qtEncomendasT)
                 {
                     auxiliar=veiculos[j];
                     veiculos[j]=veiculos[i];
@@ -231,5 +244,5 @@ void listarVeiculosDecrescenteEncomendas(tipoVeiculos veiculos[], int numVeiculo
             }
         }
     }
-}
+}*/
 
